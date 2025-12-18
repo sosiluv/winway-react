@@ -1,9 +1,6 @@
-
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
-import bgimage from '../../images/image1.jpg';
-import bgimage2 from '../../images/image19.jpg';
 
 export default function TradingSystemsPage() {
   const { t } = useTranslation('common');
@@ -22,73 +19,55 @@ export default function TradingSystemsPage() {
     {
       title: 'Prop Trading Platform',
       description:
-        'Comprehensive equity trading solutions with advanced order management, real-time market data integration, and sophisticated execution algorithms for global equity markets.',
-      image:
-        bgimage,
+        'Proprietary trading platform offering advanced tools and low-latency execution across equities, futures, and options.',
       link: '/trading-systems/win-edge',
     },
     {
-      title: 'Currency Arbitrage Trading Platform',
+      title: 'FX Arbitrage Trading Platform',
       description:
-        'Advanced derivatives trading platform supporting futures, options, and complex derivatives with sophisticated risk management and real-time position monitoring capabilities.',
-      image:
-        bgimage,
+        'Low-latency FX arbitrage engine across Korea’s FX ECN brokers, offshore NDFs, and KRX currency futures.',
       link: '/trading-systems/stealth-win',
     },
     {
       title: 'FX Trading Platform',
       description:
-        'High-performance foreign exchange trading platform with ultra-low latency execution, multi-currency support, and comprehensive liquidity management for institutional FX operations.',
-      image:
-        bgimage,
+        'FX trading platform that supports both dealer and client environments, equipped with a wide range of advanced features for bank dealers.',
       link: '/trading-systems/fx-win',
     },
     {
-      title: 'Global Futures & Options  Trading Platform',
+      title: 'Global Futures & Options Trading System',
       description:
-        'Specialized trading system for Korea Exchange derivatives market, featuring optimized connectivity, local market expertise, and comprehensive compliance management.',
-      image:
-        bgimage,
+        'Global derivatives trading systems delivering a complete end-to-end solution, from front-end trading to back-office processing.',
       link: '/trading-systems/winway-gdts',
     },
     {
-      title: 'KRX Futures & Options  Trading Platform',
+      title: 'KRX Futures & Options Trading System',
       description:
-        'Traditional ledger management system providing comprehensive record-keeping, audit trails, and regulatory compliance for non-electronic trading operations and legacy systems.',
-      image:
-        bgimage,
+        'KRX derivatives trading systems with comprehensive front-to-back functionality, covering the entire trading lifecycle.',
       link: '/trading-systems/winway-kdts',
     },
     {
-      title: 'Global Equity Trading Platform',
+      title: 'Global Equity Trading System',
       description:
-        'Traditional ledger management system providing comprehensive record-keeping, audit trails, and regulatory compliance for non-electronic trading operations and legacy systems.',
-      image:
-        bgimage,
+        'Integrated global equity trading systems providing complete front-to-back coverage across the full trading workflow.',
       link: '/trading-systems/winway-gets',
     },
     {
       title: 'Fixed Income Trading System',
       description:
-        'Traditional ledger management system providing comprehensive record-keeping, audit trails, and regulatory compliance for non-electronic trading operations and legacy systems.',
-      image:
-        bgimage,
+        'Fixed Income Trading System designed for both institutional and retail users, supporting the full workflow from front office to back office.',
       link: '/trading-systems/winway-fits',
     },
     {
-      title: 'Equity CFD Trading Platform',
+      title: 'Equity CFD Trading System',
       description:
-        'Traditional ledger management system providing comprehensive record-keeping, audit trails, and regulatory compliance for non-electronic trading operations and legacy systems.',
-      image:
-        bgimage,
+        'Equity CFD Trading Systems with comprehensive front-to-back functionality, covering the entire trading lifecycle.',
       link: '/trading-systems/winway-cfd-equity',
     },
     {
-      title: 'Gold Trading Platform',
+      title: 'Gold Trading System',
       description:
-        'Traditional ledger management system providing comprehensive record-keeping, audit trails, and regulatory compliance for non-electronic trading operations and legacy systems.',
-      image:
-        bgimage,
+        'KRX Gold Trading System that supports the full front-to-back workflow and enables arbitrage between KRX gold and global gold markets.',
       link: '/trading-systems/winway-gold',
     },
   ];
@@ -106,63 +85,58 @@ export default function TradingSystemsPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section ref={heroRef} className="relative py-24 min-h-[600px] flex items-end pb-20">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-slate-900"></div>
-        </div>
+      {/* HERO SECTION */}
+      <section
+        ref={heroRef}
+        className="relative pt-24 pb-8 min-h-[550px] flex items-center justify-center"
+      >
+        <div className="absolute inset-0 bg-slate-900" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="max-w-3xl">
+          <div className="max-w-6xl mx-auto text-center">
 
-            {/* Top small label */}
             <p
-              className={`text-sm font-bold mb-4 tracking-wide uppercase font-inter transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              className={`text-sm font-bold mb-4 tracking-wide uppercase font-inter transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
-              style={{ color: '#FFFFFF', transitionDelay: '0ms' }}
+              style={{ color: "#FFFFFF" }}
             >
               WHAT WE DO
             </p>
 
-            {/* Main Title */}
             <h1
-              className={`text-6xl md:text-7xl font-semibold mb-6 font-cormorant leading-tight transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              className={`text-6xl md:text-7xl font-semibold mb-6 font-cormorant leading-tight transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
-              style={{ color: '#FFFFFF', transitionDelay: '200ms' }}
+              style={{ color: "#FFFFFF" }}
             >
               Trading Systems
             </h1>
 
-            {/* Description */}
             <p
-              className={`text-lg font-bold leading-relaxed font-inter transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              className={`text-lg font-bold leading-relaxed font-inter transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
-              style={{ color: '#FFFFFF', transitionDelay: '400ms' }}
+              style={{ color: "#FFFFFF" }}
             >
               Advanced trading system solutions designed for modern financial markets.
-              Our sophisticated systems provide the performance and reliability needed for successful trading operations.
+              Our sophisticated systems provide the performance and reliability needed
+              for successful trading operations.
             </p>
 
-            {/* ---------------------------------------- */}
-            {/* Quick Navigation Bar (Positioned HERE) */}
-            {/* ---------------------------------------- */}
             <div
-              className={`mt-10 border-t border-slate-600 pt-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              className={`mt-10 border-t border-slate-600 pt-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
-              style={{ transitionDelay: '600ms' }}
             >
-              <div className="flex flex-wrap gap-6 justify-start text-sm font-medium text-slate-300">
+              <div className="flex flex-wrap gap-6 justify-center text-sm font-medium text-slate-300">
 
                 {[
-                  { label: 'Prop Trading Platform', link: '/trading-systems/global-equity' },
-                  { label: 'Currency Arbitrage Trading', link: '/trading-systems/stealth-win' },
-                  { label: 'FX Trading Platform', link: '/trading-systems/fx-win' },
-                  { label: 'Global Futures & Options', link: '/trading-systems/winway-gdts' },
-                  { label: 'KRX F&O Trading', link: '/trading-systems/winway-kdts' },
-                  { label: 'Global Equity Trading', link: '/trading-systems/winway-gets' },
-                  { label: 'Fixed Income Trading', link: '/trading-systems/winway-fits' },
-                  { label: 'Equity CFD Trading', link: '/trading-systems/winway-cfd-equity' },
-                  { label: 'Gold Trading Platform', link: '/trading-systems/winway-gold' },
+                  { label: "Prop Trading", link: "/trading-systems/win-edge" },
+                  { label: "Arbitrage", link: "/trading-systems/stealth-win" },
+                  { label: "FX", link: "/trading-systems/fx-win" },
+                  { label: "Global F&O", link: "/trading-systems/winway-gdts" },
+                  { label: "KRX F&O", link: "/trading-systems/winway-kdts" },
+                  { label: "Global Equity", link: "/trading-systems/winway-gets" },
+                  { label: "Fixed Income", link: "/trading-systems/winway-fits" },
+                  { label: "CFD", link: "/trading-systems/winway-cfd-equity" },
+                  { label: "Gold", link: "/trading-systems/winway-gold" },
                 ].map((item, idx) => (
                   <button
                     key={idx}
@@ -172,75 +146,43 @@ export default function TradingSystemsPage() {
                     {item.label}
                   </button>
                 ))}
+
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
+      {/* SERVICES SECTION */}
+      <section className="py-12 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
-      {/* Our Services Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-slate-800 mb-8 font-cormorant">
-              Our Services
-            </h2>
-            <p className="text-lg text-slate-600 max-w-4xl">
-              We partner with business leaders to drive innovation, transformation, and enduring success
-              that transcends individual transactions.
-            </p>
-          </div>
-
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group cursor-pointer"
                 onClick={() => handleNavigate(service.link)}
+                className="group cursor-pointer border border-slate-200 p-10 bg-white hover:shadow-sm transition-all flex flex-col"
               >
-                <div className="mb-6 overflow-hidden relative">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 p-6 flex flex-col justify-between"></div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-slate-800 mb-3 group-hover:text-slate-600 transition-colors duration-200">
-                    {service.title}
-                  </h3>
-                  <p className="text-slate-600 mb-4 leading-relaxed">{service.description}</p>
-                  <span className="text-slate-800 underline decoration-1 underline-offset-4 group-hover:text-slate-600 group-hover:no-underline transition-all duration-200 cursor-pointer">
-                    Learn More
-                  </span>
-                </div>
+                <h3 className="text-[30px] font-cormorant font-extrabold text-slate-900 mb-4 leading-snug tracking-tight">
+                  {service.title}
+                </h3>
+
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  {service.description}
+                </p>
+
+                {/* aligned bottom */}
+                <span className="mt-auto pt-4 text-slate-800 underline underline-offset-4 decoration-1 group-hover:text-slate-600 transition">
+                  Learn More →
+                </span>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* Trading Systems Inquiry Section */}
-      <section className="py-20 bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-semibold text-white mb-6 font-cormorant">
-            Connect with Trading Systems
-          </h2>
-          <button
-            type="button"
-            className="bg-slate-900 text-white px-8 py-4 font-semibold hover:bg-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap inline-flex items-center gap-2 mt-8"
-          >
-            Inquire About Our Trading Systems
-            <i className="ri-external-link-line text-lg"></i>
-          </button>
-        </div>
-      </section>
     </div>
   );
 }
-

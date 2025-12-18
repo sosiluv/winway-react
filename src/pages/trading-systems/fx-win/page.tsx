@@ -51,7 +51,7 @@ const EFX_KEY_FEATURES = [
         description: 'Supports Spot, Forward, NDF, Swap and MAR (USD/KRW) across your FX workflow.',
     },
     {
-        icon: 'ri-equalizer-line',
+        icon: 'ri-settings-line',
         title: 'Configurable markups & limits',
         description: 'Control pricing and limits by client, currency, tenor, and channel.',
     },
@@ -100,8 +100,8 @@ export default function WinEdgePropTradingPage() {
                             <button
                                 onClick={() => scrollToSection('overview')}
                                 className={`text-sm font-medium pb-1 border-b-2 cursor-pointer transition-colors whitespace-nowrap ${currentSection === 'overview'
-                                        ? 'text-white border-white'
-                                        : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'
+                                    ? 'text-white border-white'
+                                    : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'
                                     }`}
                             >
                                 Overview
@@ -110,8 +110,8 @@ export default function WinEdgePropTradingPage() {
                             <button
                                 onClick={() => scrollToSection('key-features')}
                                 className={`text-sm font-medium pb-1 border-b-2 cursor-pointer transition-colors whitespace-nowrap ${currentSection === 'key-features'
-                                        ? 'text-white border-white'
-                                        : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'
+                                    ? 'text-white border-white'
+                                    : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'
                                     }`}
                             >
                                 Key Features
@@ -120,8 +120,8 @@ export default function WinEdgePropTradingPage() {
                             <button
                                 onClick={() => scrollToSection('features')}
                                 className={`text-sm font-medium pb-1 border-b-2 cursor-pointer transition-colors whitespace-nowrap ${currentSection === 'features'
-                                        ? 'text-white border-white'
-                                        : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'
+                                    ? 'text-white border-white'
+                                    : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'
                                     }`}
                             >
                                 Client Platform
@@ -130,8 +130,8 @@ export default function WinEdgePropTradingPage() {
                             <button
                                 onClick={() => scrollToSection('dealer-sales')}
                                 className={`text-sm font-medium pb-1 border-b-2 cursor-pointer transition-colors whitespace-nowrap ${currentSection === 'dealer-sales'
-                                        ? 'text-white border-white'
-                                        : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'
+                                    ? 'text-white border-white'
+                                    : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'
                                     }`}
                             >
                                 Dealer &amp; Sales
@@ -140,8 +140,8 @@ export default function WinEdgePropTradingPage() {
                             <button
                                 onClick={() => scrollToSection('enterprise-architecture')}
                                 className={`text-sm font-medium pb-1 border-b-2 cursor-pointer transition-colors whitespace-nowrap ${currentSection === 'enterprise-architecture'
-                                        ? 'text-white border-white'
-                                        : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'
+                                    ? 'text-white border-white'
+                                    : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'
                                     }`}
                             >
                                 Architecture &amp; Integrations
@@ -150,8 +150,8 @@ export default function WinEdgePropTradingPage() {
                             <button
                                 onClick={() => scrollToSection('fx-dma-hub')}
                                 className={`text-sm font-medium pb-1 border-b-2 cursor-pointer transition-colors whitespace-nowrap ${currentSection === 'fx-dma-hub'
-                                        ? 'text-white border-white'
-                                        : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'
+                                    ? 'text-white border-white'
+                                    : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'
                                     }`}
                             >
                                 FX DMA HUB
@@ -183,7 +183,7 @@ export default function WinEdgePropTradingPage() {
             {/* ================================
     Key Features – Card Layout
 ================================= */}
-            <section id="key-features" className="py-20 bg-slate-50">
+            <section id="key-features" className="py-20 bg-gray-100">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
                     {/* Header */}
@@ -230,7 +230,7 @@ export default function WinEdgePropTradingPage() {
 =================================== */}
             <section
                 id="features"
-                className="py-24 bg-white border-t border-slate-200"
+                className="py-24 bg-white"
             >
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -284,7 +284,7 @@ export default function WinEdgePropTradingPage() {
 =================================== */}
             <section
                 id="dealer-sales"
-                className="py-24 bg-slate-50 border-t border-slate-200"
+                className="py-24 bg-gray-100"
             >
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -410,7 +410,7 @@ export default function WinEdgePropTradingPage() {
                                     <p className="text-xl md:text-2xl text-slate-900 leading-relaxed font-light text-left">
                                         <span className="font-extrabold">Client FIX API</span>{" "}
                                         for differentiated pricing and{" "}
-                                        <span className="font-extrabold">ultra-low-latency</span> order &amp;
+                                        <span className="font-extrabold">low-latency</span> order &amp;
                                         acknowledgement flows for arbitrage trading.
                                     </p>
                                 </article>
@@ -485,7 +485,7 @@ export default function WinEdgePropTradingPage() {
 =================================== */}
             <section
                 id="enterprise-architecture"
-                className="py-28 bg-slate-50 border-t border-slate-200"
+                className="py-28 bg-gray-100"
             >
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -550,7 +550,7 @@ export default function WinEdgePropTradingPage() {
 =================================== */}
             <section
                 id="fx-dma-hub"
-                className="py-28 bg-white border-t border-slate-200"
+                className="py-28 bg-white"
             >
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -614,27 +614,6 @@ export default function WinEdgePropTradingPage() {
                             </p>
                         </article>
 
-                    </div>
-                </div>
-            </section>
-
-            <section className="py-20 bg-gradient-to-r from-slate-50 to-slate-100">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                        Ready to Elevate Your Prop Trading?
-                    </h2>
-                    <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-                        WinEdge equips professional traders and institutions with the tools needed to
-                        capture opportunities, manage risk and execute with confidence in today&apos;s
-                        dynamic markets.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="bg-slate-900 hover:bg-black text-white px-8 py-4 font-semibold transition-colors whitespace-nowrap inline-flex items-center justify-center">
-                            Schedule Consultation
-                        </button>
-                        <button className="border border-slate-400 hover:border-slate-600 text-slate-800 hover:text-slate-900 px-8 py-4 font-semibold transition-colors whitespace-nowrap inline-flex items-center justify-center">
-                            Download Brochure
-                        </button>
                     </div>
                 </div>
             </section>

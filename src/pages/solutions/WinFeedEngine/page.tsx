@@ -49,8 +49,7 @@ export default function WinFeedEnginePage() {
             <section className="relative py-20 bg-slate-900 text-center">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 font-cormorant">
-                        WinFeed Engine <br />
-                        Market Data Processing System
+                        WinFeed Engine | Market Data Processing
                     </h1>
                     <p className="text-xl text-slate-300 leading-relaxed mb-10 max-w-3xl mx-auto">
                         A unified market data processing solution that enables efficient processing of
@@ -58,7 +57,7 @@ export default function WinFeedEnginePage() {
                     </p>
 
                     {/* Navigation */}
-                    <div className="flex flex-wrap justify-center gap-6 border-t border-slate-600 pt-6">
+                    <div className="flex flex-wrap justify-center gap-6 pt-6">
                         <a href="#overview" className="text-white hover:text-slate-300 text-sm font-medium border-b-2 border-transparent hover:border-white pb-1">
                             Overview
                         </a>
@@ -127,8 +126,9 @@ export default function WinFeedEnginePage() {
 
                 </div>
             </section>
+
             {/* Applications Section */}
-            <section id="applications" className="py-28 bg-[#f6f7f9] border-t border-slate-300">
+            <section id="applications" className="py-28 bg-[#f6f7f9]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Section Header */}
                     <div className="mb-16 text-center">
@@ -177,7 +177,7 @@ export default function WinFeedEnginePage() {
             {/* Functions Section */}
             <section
                 id="functions"
-                className="py-28 bg-gradient-to-b from-[#f7f8f9] via-[#f4f5f6] to-[#eef0f2] border-t border-slate-300"
+                className="py-28 bg-gradient-to-b from-[#f7f8f9] via-[#f4f5f6] to-[#eef0f2]"
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="mb-20 text-center">
@@ -241,113 +241,102 @@ export default function WinFeedEnginePage() {
                 </div>
             </section>
 
-            {/* Key Features Section */}
-            <section id="key-features" className="py-20 bg-white">
+            {/* Key Features Section – Image Removed, Clean Institutional Layout */}
+            <section id="key-features" className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
                     {/* Header */}
-                    <div className="mb-20 text-center">
+                    <div className="mb-24 text-center">
                         <h2 className="text-4xl md:text-5xl font-extrabold text-[#0b172a] mb-4 font-cormorant">
                             Key Features
                         </h2>
-                        <p className="text-lg text-slate-700 leading-relaxed max-w-3xl mx-auto">
-                            High-performance market data infrastructure built for precision, scale, and reliability.
-                        </p>
                     </div>
 
-                    {/* Grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-stretch">
-                        {/* LEFT COLUMN */}
-                        <div className="space-y-12 flex flex-col justify-between">
-                            {/* 1. Ultra-Low Latency Performance */}
-                            <div className="relative pr-6">
-                                <div className="absolute right-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                                    Ultra-Low Latency Performance
-                                </h3>
-                                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                                    <li>Microsecond-level data processing</li>
-                                    <li>Zero-copy data pipeline, tuned for HFT & low-latency DMA environments</li>
-                                </ul>
-                            </div>
+                    {/* Features Grid – 2 Column, Balanced */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16">
 
-                            {/* 2. Scalable Distributed Architecture */}
-                            <div className="relative pr-6">
-                                <div className="absolute right-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                                    Scalable Distributed Architecture
-                                </h3>
-                                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                                    <li>Horizontally scalable cluster design</li>
-                                    <li>Elastic throughput from retail to institutional workloads</li>
-                                </ul>
-                            </div>
-
-                            {/* 3. Advanced Monitoring & Control */}
-                            <div className="relative pr-6">
-                                <div className="absolute right-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                                    Advanced Monitoring & Control
-                                </h3>
-                                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                                    <li>Real-time dashboards for flow, latency, synchronization, and data integrity</li>
-                                    <li>Alerting for feed status, anomalies, and connectivity issues</li>
-                                </ul>
-                            </div>
+                        {/* 1. Ultra-Low Latency Performance */}
+                        <div className="relative pl-6">
+                            <div className="absolute left-0 top-1 h-full w-[2px] bg-[#1b2a4e]/60 rounded-full" />
+                            <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
+                                Ultra-Low Latency Performance
+                            </h3>
+                            <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
+                                <li>Microsecond-level data processing</li>
+                                <li>Zero-copy data pipeline, tuned for HFT & low-latency DMA environments</li>
+                            </ul>
                         </div>
 
-                        {/* CENTER IMAGE */}
-                        <div className="flex items-stretch justify-center">
-                            <img
-                                src="https://readdy.ai/api/search-image?query=Professional%20order%20management%20system%20dashboard%20with%20comprehensive%20order%20tracking%20interface%2C%20real-time%20execution%20monitoring%20displays%2C%20institutional%20trading%20workstation%20with%20sophisticated%20silver%20and%20navy%20color%20scheme%2C%20modern%20OMS%20platform%20showing%20order%20flow%20and%20portfolio%20positions&width=400&height=500&seq=oms-interface-compact&orientation=portrait"
-                                alt="Market Data Infrastructure Interface"
-                                className="w-full h-full object-cover object-center rounded-xl shadow-sm"
-                            />
+                        {/* 2. Scalable Distributed Architecture */}
+                        <div className="relative pl-6">
+                            <div className="absolute left-0 top-1 h-full w-[2px] bg-[#1b2a4e]/60 rounded-full" />
+                            <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
+                                Scalable Distributed Architecture
+                            </h3>
+                            <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
+                                <li>Horizontally scalable cluster design</li>
+                                <li>Elastic throughput from retail to institutional workloads</li>
+                            </ul>
                         </div>
 
-                        {/* RIGHT COLUMN */}
-                        <div className="space-y-12 flex flex-col justify-between">
-                            {/* 4. Robust Data Quality Controls */}
-                            <div className="relative pl-6">
-                                <div className="absolute left-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                                    Robust Data Quality Controls
-                                </h3>
-                                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                                    <li>Duplicate suppression, timestamp alignment, stale tick detection</li>
-                                    <li>Validation and cleansing to ensure clean, tradable data</li>
-                                </ul>
-                            </div>
-
-                            {/* 5. Secure & Reliable Operation */}
-                            <div className="relative pl-6">
-                                <div className="absolute left-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                                    Secure & Reliable Operation
-                                </h3>
-                                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                                    <li>Role-based access control & encrypted transit channels</li>
-                                    <li>Proven resilience in high-volume trading environments</li>
-                                </ul>
-                            </div>
-
-                            {/* 6. Value Proposition */}
-                            <div className="relative pl-6">
-                                <div className="absolute left-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                                    Value Proposition
-                                </h3>
-                                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                                    <li>Faster signal generation</li>
-                                    <li>Better order execution quality</li>
-                                    <li>Reduced latency risk & information delay</li>
-                                    <li>Higher stability and market uptime</li>
-                                    <li>Simplified integration and data governance</li>
-                                </ul>
-                            </div>
+                        {/* 3. Advanced Monitoring & Control */}
+                        <div className="relative pl-6">
+                            <div className="absolute left-0 top-1 h-full w-[2px] bg-[#1b2a4e]/60 rounded-full" />
+                            <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
+                                Advanced Monitoring & Control
+                            </h3>
+                            <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
+                                <li>Real-time dashboards for flow, latency, synchronization, and data integrity</li>
+                                <li>Alerting for feed status, anomalies, and connectivity issues</li>
+                            </ul>
                         </div>
+
+                        {/* 4. Robust Data Quality Controls */}
+                        <div className="relative pl-6">
+                            <div className="absolute left-0 top-1 h-full w-[2px] bg-[#1b2a4e]/60 rounded-full" />
+                            <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
+                                Robust Data Quality Controls
+                            </h3>
+                            <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
+                                <li>Duplicate suppression, timestamp alignment, stale tick detection</li>
+                                <li>Validation and cleansing to ensure clean, tradable data</li>
+                            </ul>
+                        </div>
+
+                        {/* 5. Secure & Reliable Operation */}
+                        <div className="relative pl-6">
+                            {/* Accent line sized to text */}
+                            <div className="absolute left-0 top-1 bottom-1 w-[2px] bg-[#1b2a4e]/60 rounded-full" />
+
+                            <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
+                                Secure & Reliable Operation
+                            </h3>
+                            <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
+                                <li>Role-based access control & encrypted transit channels</li>
+                                <li>Proven resilience in high-volume trading environments</li>
+                            </ul>
+                        </div>
+
+
+                        {/* 6. Value Proposition */}
+                        <div className="relative pl-6">
+                            <div className="absolute left-0 top-1 h-full w-[2px] bg-[#1b2a4e]/60 rounded-full" />
+                            <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
+                                Value Proposition
+                            </h3>
+                            <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
+                                <li>Faster signal generation</li>
+                                <li>Better order execution quality</li>
+                                <li>Reduced latency risk & information delay</li>
+                                <li>Higher stability and market uptime</li>
+                                <li>Simplified integration and data governance</li>
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
             </section>
+
         </div>
     );
 }

@@ -171,9 +171,9 @@ const WHY_STEALTH_ITEMS = [
             'Delivers microsecond-level signal detection and execution for high-velocity arbitrage strategies.',
     },
     {
-        title: 'Intelligent algorithms for MAR and cross-market pricing',
+        title: 'Intelligent algorithms for MAR play',
         description:
-            'Supports advanced MAR trading algorithms, VWAP-based execution, and dynamic pricing across Spot, NDF, and futures markets.',
+            'Supports advanced MAR (Market Average Rate) trading algorithms, VWAP-based execution.',
     },
     {
         title: 'Cross-market intelligence for Spot, NDF and Futures',
@@ -214,13 +214,10 @@ export default function WinEdgePropTradingPage() {
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center">
                         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 font-cormorant ">
-                            Stealth Win<br></br>Currency Arbitrage Trading Platform
+                            StealthWin | FX Arbitrage Platform
                         </h1>
                         <p className="text-xl text-slate-300 leading-relaxed mb-8">
-                            Proprietary Trading, Engineered for Edge. Trade Faster, See Smarter, Execute
-                            Better. <br />
-                            Empowering traders with advanced tools and low-latency execution across
-                            global markets.
+                            A fully integrated execution platform designed for institutional FX arbitrage, combining low-latency infrastructure with precise, systematic trading capabilities across FX spot and derivatives markets.
                         </p>
 
                         {/* Top Nav */}
@@ -252,15 +249,6 @@ export default function WinEdgePropTradingPage() {
                             >
                                 Features
                             </button>
-                            <button
-                                onClick={() => scrollToSection('architecture', 'architecture')}
-                                className={`text-sm font-medium pb-1 border-b-2 cursor-pointer transition-colors whitespace-nowrap ${currentSection === 'architecture'
-                                    ? 'text-white border-white'
-                                    : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'
-                                    }`}
-                            >
-                                System Architecture
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -274,10 +262,10 @@ export default function WinEdgePropTradingPage() {
                     <FadeIn delay={0}>
                         <div className="max-w-4xl">
                             <h3 className="text-sm md:text-base font-semibold text-slate-500 mb-4 tracking-widest uppercase">
-                                Advanced Cross-Currency Arbitrage Platform
+                                Advanced FX Arbitrage Platform
                             </h3>
                             <p className="text-4xl md:text-4xl font-cormorant text-slate-900 leading-[1.65] tracking-wide">
-                                Stealth Win is a trading platform engineered for arbitrage opportunities
+                                StealthWin is a trading platform engineered for arbitrage opportunities
                                 between USD, EUR and JPY against KRW.
                                 <br /><br />
                                 It provides a complete end-to-end solution that enables arbitrage across Spot FX, NDFs, currency futures,
@@ -415,27 +403,6 @@ export default function WinEdgePropTradingPage() {
                         ))}
                     </ol>
 
-                </div>
-            </section>
-
-            <section className="py-20 bg-gradient-to-r from-slate-50 to-slate-100">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                        Ready to Elevate Your Prop Trading?
-                    </h2>
-                    <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-                        WinEdge equips professional traders and institutions with the tools needed to
-                        capture opportunities, manage risk and execute with confidence in today&apos;s
-                        dynamic markets.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="bg-slate-900 hover:bg-black text-white px-8 py-4 font-semibold transition-colors whitespace-nowrap inline-flex items-center justify-center">
-                            Schedule Consultation
-                        </button>
-                        <button className="border border-slate-400 hover:border-slate-600 text-slate-800 hover:text-slate-900 px-8 py-4 font-semibold transition-colors whitespace-nowrap inline-flex items-center justify-center">
-                            Download Brochure
-                        </button>
-                    </div>
                 </div>
             </section>
         </div>

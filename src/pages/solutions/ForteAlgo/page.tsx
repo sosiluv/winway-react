@@ -117,8 +117,7 @@ export default function ForteAlgoPage() {
       <section className="relative py-20 bg-slate-900 text-center">
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 font-cormorant">
-            FORTE ALGO<br />
-            ALGORITHMIC EXECUTION SYSTEM
+            ForteAlgo | Algorithmic Execution System
           </h1>
           <p className="text-xl text-slate-300 leading-relaxed mb-10">
             Execute Smarter. Trade Faster. Perform Better.
@@ -142,96 +141,152 @@ export default function ForteAlgoPage() {
         </div>
       </section>
 
-      {/* Overview Section (Animated) */}
-      <section id="overview" className="py-40 bg-white">
+      {/* Overview Section – SAME FORMAT AS OMS (TEXT KEPT INTACT) */}
+      <section id="overview" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <h2 className="text-4xl md:text-5xl font-semibold text-slate-800 leading-relaxed font-cormorant">
-              ForteAlgo empowers traders with intelligent execution algorithms designed for precision, adaptability, and speed. <br />
-              <br />
-              Seamlessly integrated with WinWay’s F1Win OMS, it delivers ultra-low latency, strategy customization, and dynamic control across markets. <br />
-              <br />
-              Built for both institutional and proprietary trading, ForteAlgo transforms execution into a competitive advantage.
-            </h2>
+          <FadeIn delay={0}>
+            <div className="max-w-4xl">
+              <h3 className="text-sm md:text-base font-semibold text-slate-500 mb-6 tracking-widest uppercase">
+                Algorithmic Execution System
+              </h3>
+
+              <p className="text-2xl md:text-3xl font-cormorant text-slate-900 leading-[1.9] tracking-normal">
+                <span className="block">
+                  ForteAlgo empowers traders with intelligent execution algorithms
+                  designed for precision, adaptability, and speed.
+                </span>
+
+                <span className="block mt-8">
+                  Seamlessly integrated with WinWay’s F1Win OMS, it delivers ultra-low
+                  latency, strategy customization, and dynamic control across markets.
+                </span>
+
+                <span className="block mt-8">
+                  Built for both institutional and proprietary trading, ForteAlgo
+                  transforms execution into a competitive advantage.
+                </span>
+              </p>
+            </div>
           </FadeIn>
         </div>
       </section>
+
       {/* Key Features Section */}
-      <section id="key-features" className="py-20 bg-white">
+      <section id="key-features" className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
           {/* Header */}
           <div className="mb-20 text-center">
             <h2 className="text-4xl md:text-5xl font-extrabold text-[#0b172a] mb-4 font-cormorant">
               Key Features
             </h2>
-            <p className="text-lg text-slate-700 leading-relaxed max-w-3xl mx-auto">
-              Comprehensive capabilities for adaptive, high-speed, and compliant execution.
-            </p>
           </div>
 
           {/* Feature Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-stretch">
-            {/* Left Column */}
-            <div className="space-y-12 flex flex-col justify-between">
-              {leftFeatures.map((feature, index) => (
-                <div key={index} className="relative pr-6">
-                  <div className="absolute right-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                  <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-3 font-cormorant tracking-wide">
-                    {feature.title}
-                  </h3>
-                  <p className="text-[15px] md:text-base leading-relaxed text-slate-800">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-14">
+            {[
+              {
+                title: 'Multi-Asset Execution Strategy Support',
+                description:
+                  'Supports a wide range of algorithmic strategies including VWAP, TWAP, Iceberg, POV, and Smart Order Routing. Enables fully customizable strategy frameworks to reflect client-specific logic and execution styles.',
+              },
+              {
+                title: 'Real-Time Market Interaction',
+                description:
+                  'Continuously monitors market depth, liquidity, and volatility to dynamically adjust order slicing and timing. Executes with precision across fragmented markets to minimize market impact and slippage.',
+              },
+              {
+                title: 'Smart Order Routing (SOR)',
+                description:
+                  'Intelligently routes orders to the best venue based on price, liquidity, latency, and fee structure. Supports simultaneous connectivity to multiple exchanges, brokers via FIX or proprietary APIs.',
+              },
+              {
+                title: 'Risk & Compliance Management',
+                description:
+                  'Real-time pre-trade risk checks: exposure limits, fat-finger control, margin validation. Comprehensive audit trails and compliance.',
+              },
+              {
+                title: 'Low Latency Architecture',
+                description:
+                  'High-performance execution framework optimized for microsecond-level latency.',
+                expandable: true,
+                details: [
+                  'In-memory data processing and lock-free design for microsecond-level performance.',
+                  'Multi-threaded execution engine optimized for parallel CPU processing.',
+                  'Minimal latency between market data ingestion and order execution.',
+                ],
+              },
+              {
+                title: 'Live Monitoring Dashboard',
+                description:
+                  'Provides an intuitive dashboard displaying order status, fill ratios, and real-time P&L. Enables traders to make data-driven decisions instantly through dynamic visual analytics.',
+              },
+              {
+                title: 'Configurable Strategy Parameters',
+                description:
+                  'Adjust aggression, participation rate, and execution style in real time. Monitor live performance and instantly adapt parameters to evolving market conditions.',
+              },
+              {
+                title: 'Seamless System Integration',
+                description:
+                  'Fully integrated with OMS, Risk Engine, Market Data Feeds, and FIX Gateway for unified operations.',
+                expandable: true,
+                details: [
+                  'Full integration with OMS, Risk Engine, Market Data Feed, and FIX Gateway.',
+                  'Pre-trade and post-trade data connectivity ensuring lifecycle-wide synchronization.',
+                ],
+              },
+            ].map((feature, index) => (
+              <div key={index} className="relative pl-8">
 
-            {/* Middle Image */}
-            <div className="flex items-stretch justify-center">
-              <img
-                src="https://readdy.ai/api/search-image?query=Professional%20order%20management%20system%20dashboard%20with%20comprehensive%20order%20tracking%20interface%2C%20real-time%20execution%20monitoring%20displays%2C%20institutional%20trading%20workstation%20with%20sophisticated%20silver%20and%20navy%20color%20scheme%2C%20modern%20OMS%20platform%20showing%20order%20flow%20and%20portfolio%20positions&width=400&height=500&seq=oms-interface-compact&orientation=portrait"
-                alt="ForteAlgo Execution Dashboard"
-                className="w-full h-full object-cover object-top rounded-xl shadow-sm border border-slate-200"
-              />
-            </div>
+                {/* Side Accent Line */}
+                <div className="absolute left-0 top-1 h-[80%] w-[2px] bg-[#1b2a4e]/60 rounded-full" />
 
-            {/* Right Column (Expandable) */}
-            <div className="space-y-12 flex flex-col justify-between">
-              {rightFeatures.map((feature, index) => (
-                <div key={index} className="relative pl-6">
-                  <div className="absolute left-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                  <button
-                    onClick={() => toggleExpand(index)}
-                    className="w-full text-left focus:outline-none"
-                  >
-                    <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-3 flex items-center justify-between font-cormorant tracking-wide">
+                {/* Title + Arrow */}
+                <button
+                  onClick={() => feature.expandable && toggleExpand(index)}
+                  className="w-full text-left focus:outline-none group"
+                >
+                  <div className="flex items-start justify-between gap-6">
+                    <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-3 font-cormorant tracking-wide leading-snug">
                       {feature.title}
-                      {feature.details.length > 0 && (
-                        <i
-                          className={`ri-arrow-${expanded === index ? 'up' : 'down'}-s-line text-slate-700 ml-2 text-2xl`}
-                        ></i>
-                      )}
                     </h3>
-                  </button>
-                  {feature.description && (
-                    <p className="text-[15px] md:text-base leading-relaxed text-slate-800 mb-2">
-                      {feature.description}
-                    </p>
-                  )}
-                  {expanded === index && feature.details.length > 0 && (
-                    <ul className="list-disc ml-5 text-[15px] md:text-base text-slate-700 space-y-1">
-                      {feature.details.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
-            </div>
+
+                    {feature.expandable && (
+                      <span className="flex-shrink-0 mt-1">
+                        <i
+                          className={`ri-add-circle-${expanded === index ? 'fill' : 'line'
+                            } text-[#0b172a] text-3xl transition-transform duration-300 ${expanded === index ? 'rotate-45' : ''
+                            }`}
+                        />
+                      </span>
+                    )}
+                  </div>
+                </button>
+
+                {/* Description */}
+                <p className="text-[15px] md:text-base leading-[1.85] text-slate-800 max-w-xl">
+                  {feature.description}
+                </p>
+
+                {/* Expanded Content */}
+                {feature.expandable && expanded === index && feature.details && (
+                  <div className="mt-8 pl-6 border-l border-slate-200 space-y-5">
+                    {feature.details.map((item, i) => (
+                      <p
+                        key={i}
+                        className="text-[14.5px] md:text-[15px] leading-[1.9] text-slate-700"
+                      >
+                        {item}
+                      </p>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
-
 
 
     </div>

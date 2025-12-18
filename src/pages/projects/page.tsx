@@ -201,42 +201,122 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200">
-      {/* Hero Section */}
-      <section ref={heroRef} className="relative py-24 min-h-[600px] flex items-end pb-32">
-        <div className="absolute inset-0">
-          <img
-            src="https://readdy.ai/api/search-image?query=Global%20financial%20markets%20skyline%20with%20modern%20skyscrapers%20and%20trading%20centers%2C%20sophisticated%20urban%20landscape%20showcasing%20international%20finance%20districts%2C%20professional%20business%20environment%20with%20glass%20towers%20reflecting%20market%20data%2C%20silver%20and%20navy%20color%20scheme%20with%20clean%20architectural%20lines%20and%20geometric%20patterns&width=1200&height=600&seq=projects-hero-finance-skyline&orientation=landscape"
-            alt="Background"
-            className="w-full h-full object-cover object-top"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/70 via-slate-800/60 to-slate-700/70"></div>
-        </div>
+      <section
+        ref={heroRef}
+        className="relative min-h-[500px] !pt-24 !pb-4 flex !items-center !justify-center bg-[#0a1325]"
+      >
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="max-w-3xl">
+          <div className="max-w-6xl mx-auto text-center">
+
+            {/* Top Label */}
             <p
-              className={`text-sm font-bold mb-4 tracking-wide uppercase font-inter transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              className={`text-sm font-bold mb-4 tracking-wide uppercase font-inter transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
-              style={{ color: '#FFFFFF', transitionDelay: '0ms' }}
+              style={{ color: "#FFFFFF", transitionDelay: "0ms" }}
             >
               OUR PORTFOLIO
             </p>
+
+            {/* Title */}
             <h1
-              className={`text-6xl md:text-7xl font-semibold mb-6 font-cormorant leading-tight transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              className={`text-6xl md:text-7xl font-semibold mb-6 font-cormorant leading-tight transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
-              style={{ color: '#FFFFFF', transitionDelay: '200ms' }}
+              style={{ color: "#FFFFFF", transitionDelay: "200ms" }}
             >
               Projects
             </h1>
+
+            {/* Description */}
             <p
-              className={`text-lg font-bold leading-relaxed font-inter transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              className={`text-lg font-bold leading-relaxed font-inter transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
-              style={{ color: '#FFFFFF', transitionDelay: '400ms' }}
+              style={{ color: "#FFFFFF", transitionDelay: "400ms" }}
             >
-              Explore our portfolio of successful implementations and innovative solutions that have transformed financial institutions worldwide.
+              Explore our portfolio of successful implementations and innovative solutions
+              that have transformed financial institutions worldwide.
             </p>
+
           </div>
         </div>
       </section>
+
+      {/* Premium Scrolling Bank Names Section */}
+      <section className="mt-0 py-5 bg-[#0A1A2F] overflow-hidden relative">
+
+        {/* Fade edges */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#0A1A2F] to-transparent"></div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#0A1A2F] to-transparent"></div>
+
+        {/* Inner Column */}
+        <div className="flex flex-col gap-y-4">
+
+          {/* Line 1 — LEFT → RIGHT (switched) */}
+          <div className="flex whitespace-nowrap animate-scroll-rtl">
+            {[1, 2].map((_, i) => (
+              <div key={i} className="flex items-center gap-24 px-16">
+                {[
+                  "KOOKMIN BANK",
+                  "INDUSTRIAL BANK OF KOREA",
+                  "NONGHYUP BANK",
+                  "SHINHAN BANK",
+                  "MIRAE ASSET SECURITIES",
+                  "MERITZ SECURITIES",
+                  "DB SECURITIES",
+                  "HANA SECURITIES",
+                  "SK SECURITIES",
+                  "KYOBO SECURITIES",
+                  "SHINHAN SECURITIES",
+                  "EUGENE INVESTMENT & FUTURES",
+                  "DEUTSCHE BANK",
+                  "KOSCOM",
+                  "LOTTE INNOVATE",
+                ].map((name) => (
+                  <span
+                    key={name}
+                    className="text-white text-[16px] tracking-wider uppercase opacity-80 hover:opacity-100 transition"
+                  >
+                    {name}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+
+          {/* Line 2 — RIGHT → LEFT (switched) */}
+          <div className="flex whitespace-nowrap animate-scroll-ltr">
+            {[1, 2].map((_, i) => (
+              <div key={i} className="flex items-center gap-24 px-16">
+                {[
+                  "KB SECURITIES",
+                  "SAMSUNG SECURITIES",
+                  "NH INVESTMENT & SECURITIES",
+                  "KIWOOM SECURITIES",
+                  "HANWHA INVESTMENT & SECURITIES",
+                  "YUANTA SECURITIES",
+                  "WOORI INVESTMENT SECURITIES",
+                  "DAISHIN SECURITIES",
+                  "LS SECURITIES",
+                  "KOREA INVESTMENT & SECURITIES",
+                  "NH FUTURES",
+                  "SAMSUNG FUTURES",
+                  "CITIGROUP GLOBAL MARKETS KOREA SECURITIES",
+                  "LEADING INVESTMENT & SECURITIES",
+                  "NH INFORMATION SYSTEM",
+                ].map((name) => (
+                  <span
+                    key={name}
+                    className="text-white text-[16px] tracking-wider uppercase opacity-80 hover:opacity-100 transition"
+                  >
+                    {name}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
 
       {/* Project History Section */}
       <section className="py-20">
@@ -292,22 +372,6 @@ export default function ProjectsPage() {
             </div>
           </div>
 
-        </div>
-      </section>
-
-      {/* Connect Section */}
-      <section className="py-20 bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-semibold text-white mb-6 font-cormorant">
-            Connect with Winway Systems
-          </h2>
-          <button
-            type="button"
-            className="bg-slate-900 text-white px-8 py-4 font-semibold hover:bg-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap inline-flex items-center gap-2 mt-8"
-          >
-            Inquire About Our Services
-            <i className="ri-external-link-line text-lg"></i>
-          </button>
         </div>
       </section>
     </div>

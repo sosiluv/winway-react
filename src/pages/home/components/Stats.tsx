@@ -1,8 +1,7 @@
-
 export default function Stats() {
   const stats = [
     {
-      number: "50+",
+      number: "30+",
       label: "Financial Institutions"
     },
     {
@@ -10,12 +9,12 @@ export default function Stats() {
       label: "Years of Experience"
     },
     {
-      number: "99.9%",
+      number: "99.99%",
       label: "System Uptime"
     },
     {
       number: "CME Group",
-      label: "Global Partnership"
+      label: "ISV"
     }
   ];
 
@@ -25,9 +24,17 @@ export default function Stats() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-5xl md:text-6xl font-bold text-gray-900 mb-4 font-cormorant">
+
+              <div
+                className={`font-cormorant mb-4 ${
+                  stat.number === "CME Group"
+                    ? "text-4xl md:text-5xl font-semibold tracking-tight mt-3"
+                    : "text-5xl md:text-6xl font-bold"
+                }`}
+              >
                 {stat.number}
               </div>
+
               <div className="text-xl md:text-2xl text-gray-700 font-semibold">
                 {stat.label}
               </div>

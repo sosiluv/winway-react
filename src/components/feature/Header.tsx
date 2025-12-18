@@ -12,10 +12,11 @@ export default function Header() {
 
   const navigation = [
     { name: t('TRADING SYSTEMS'), href: '/trading-systems' },
-    { name: t('platforms'), href: '/platforms' },
-    { name: t('solutions'), href: '/solutions' },
-    { name: t('projects'), href: '/projects' },
-    { name: t('winway'), href: '/winway' },
+    { name: t('FRAMEWORKS'), href: '/frameworks' },
+    { name: t('SOLUTIONS'), href: '/solutions' },
+    { name: t('SERVICES'), href: '/services' },
+    { name: t('PROJECTS'), href: '/projects' },
+    { name: t('WINWAY'), href: '/winway' },
   ];
 
   return (
@@ -34,11 +35,22 @@ export default function Header() {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap uppercase ${
-                    location.pathname === item.href
-                      ? 'text-white border-b-2 border-blue-400'
-                      : 'text-slate-300 hover:text-white hover:border-b-2 hover:border-slate-400'
-                  }`}
+                  className={`relative px-3 py-2 text-sm font-medium uppercase whitespace-nowrap
+  transition-colors
+  after:content-['']
+  after:absolute after:left-0 after:right-0 after:-bottom-1
+  after:h-[1px]
+  after:bg-slate-400
+  after:origin-center
+  after:scale-x-0
+  after:transition-transform after:duration-300 after:ease-out
+  hover:after:scale-x-100
+  ${location.pathname === item.href
+                      ? 'text-white after:scale-x-100 after:bg-slate-300'
+                      : 'text-slate-300 hover:text-white'
+                    }`}
+
+
                 >
                   {item.name}
                 </Link>
@@ -49,7 +61,7 @@ export default function Header() {
           {/* Language Toggle & Mobile menu button */}
           <div className="flex items-center space-x-4">
             <LanguageToggle />
-            
+
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -70,11 +82,10 @@ export default function Header() {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`block px-3 py-2 text-base font-medium transition-colors uppercase ${
-                  location.pathname === item.href
-                    ? 'text-white bg-slate-700'
-                    : 'text-slate-300 hover:text-white hover:bg-slate-700'
-                }`}
+                className={`block px-3 py-2 text-base font-medium transition-colors uppercase ${location.pathname === item.href
+                  ? 'text-white bg-slate-700'
+                  : 'text-slate-300 hover:text-white hover:bg-slate-700'
+                  }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}

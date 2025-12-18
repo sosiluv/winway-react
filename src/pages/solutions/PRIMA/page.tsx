@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
+
 // ✨ Fade-in component (same as OMS)
 function FadeIn({ children, delay = 0 }) {
     const ref = useRef(null);
@@ -39,9 +40,63 @@ export default function PRIMAPage() {
     const { t } = useTranslation('common');
     const navigate = useNavigate();
 
+    // ✅ Added for expandable Key Features only
+    const [openIndex, setOpenIndex] = useState(null);
+
     useEffect(() => {
         document.documentElement.style.scrollBehavior = 'smooth';
     }, []);
+
+    // ✅ Key Features data (same text you had)
+    const keyFeatures = [
+        {
+            title: "Multi-Exchange Margining Framework",
+            bullets: [
+                "Supports CME SPAN, Eurex Prisma, JPX VaR, OCC TIMS, and KRX COMS methodologies",
+                "Unified computation logic for global clearing risk models",
+            ],
+        },
+        {
+            title: "Real-Time Margin Calculation",
+            bullets: [
+                "Ultra-fast shared-memory compute engine for continuous portfolio evaluation",
+                "Unix/Linux-based high-performance deployment with microsecond-level computation",
+                "Integrated pre-trade risk management capabilities",
+            ],
+        },
+        {
+            title: "Risk & Margin Capability",
+            bullets: [
+                "Real-time recognition of inter-product spread offsets by combined commodity",
+                "Combined-commodity and currency-level margin aggregation",
+                "Prevents excessive spread benefits; accurately handles one-sided risk exposure scenarios",
+            ],
+        },
+        {
+            title: "Unified API & One-Library Framework",
+            bullets: [
+                "Provides real-time portfolio ingestion and automated margin output",
+                "Single integrated library with standardized API for fast system integration",
+            ],
+        },
+        {
+            title: "Operational Excellence",
+            bullets: [
+                "Automatically updates clearing settlement ledger and margin books",
+                "Supports audit-ready workflows for risk and margin management teams",
+            ],
+        },
+        {
+            title: "Value Proposition",
+            bullets: [
+                "Real-time, high-performance portfolio margin analytics",
+                "Unified support for major global exchange risk models",
+                "Prevents under-one-sided exposure from excessive spread offsets",
+                "Accelerates onboarding of new products and clearing rules",
+                "Seamless integration with trading and risk ecosystems",
+            ],
+        },
+    ];
 
     return (
         <div className="min-h-screen bg-white pt-16">
@@ -49,7 +104,7 @@ export default function PRIMAPage() {
             <section className="relative py-20 bg-slate-900 text-center">
                 <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 font-cormorant">
-                        PRIMA
+                        PRIMA | Portfolio Margin Calculator
                     </h1>
                     <p className="text-xl text-slate-300 leading-relaxed mb-10 max-w-3xl mx-auto">
                         Precision Risk & Market Analytics — a next-generation portfolio margin and risk analysis engine.
@@ -142,116 +197,78 @@ export default function PRIMAPage() {
                 </div>
             </section>
 
-            {/* Key Features Section */}
-            <section id="key-features" className="py-20 bg-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* ================================
+               KEY FEATURES SECTION (EXPANDABLE)
+               ================================ */}
+            <section
+                id="key-features"
+                className="py-24 bg-white border-t border-slate-200"
+            >
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
                     {/* Header */}
-                    <div className="mb-20 text-center">
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-[#0b172a] mb-4 font-cormorant">
+                    <header className="mb-10">
+                        <h2 className="text-4xl md:text-5xl font-cormorant font-semibold text-slate-900 mb-4">
                             Key Features
                         </h2>
-                        <p className="text-lg text-slate-700 leading-relaxed max-w-3xl mx-auto">
-                            High-performance portfolio margining engine supporting global clearinghouse methodologies with real-time risk computation and institutional-grade reliability.
-                        </p>
-                    </div>
+                    </header>
 
-                    {/* Grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-stretch">
-                        {/* LEFT COLUMN */}
-                        <div className="space-y-12 flex flex-col justify-between">
-                            {/* 1. Multi-Exchange Margining Framework */}
-                            <div className="relative pr-6">
-                                <div className="absolute right-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                                    Multi-Exchange Margining Framework
-                                </h3>
-                                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                                    <li>Supports CME SPAN, Eurex Prisma, JPX VaR, OCC TIMS, and KRX COMS methodologies</li>
-                                    <li>Unified computation logic for global clearing risk models</li>
-                                </ul>
-                            </div>
+                    {/* Divider-based accordion */}
+                    <div className="divide-y divide-slate-300">
+                        {keyFeatures.map((feature, idx) => {
+                            const isOpen = openIndex === idx;
 
-                            {/* 2. Real-Time Margin Calculation */}
-                            <div className="relative pr-6">
-                                <div className="absolute right-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                                    Real-Time Margin Calculation
-                                </h3>
-                                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                                    <li>Ultra-fast shared-memory compute engine for continuous portfolio evaluation</li>
-                                    <li>Unix/Linux-based high-performance deployment with microsecond-level computation</li>
-                                    <li>Integrated pre-trade risk management capabilities</li>
-                                </ul>
-                            </div>
+                            return (
+                                <article key={feature.title} className="py-6">
+                                    <button
+                                        type="button"
+                                        onClick={() => setOpenIndex(isOpen ? null : idx)}
+                                        className="w-full flex items-center justify-between text-left"
+                                    >
+                                        <h3 className="text-2xl md:text-3xl font-cormorant font-semibold text-slate-900">
+                                            {feature.title}
+                                        </h3>
 
-                            {/* 3. Risk & Margin Capability */}
-                            <div className="relative pr-6">
-                                <div className="absolute right-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                                    Risk & Margin Capability
-                                </h3>
-                                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                                    <li>Real-time recognition of inter-product spread offsets by combined commodity</li>
-                                    <li>Combined-commodity and currency-level margin aggregation</li>
-                                    <li>Prevents excessive spread benefits; accurately handles one-sided risk exposure scenarios</li>
-                                </ul>
-                            </div>
-                        </div>
+                                        {/* ✅ Arrow (chevron) */}
+                                        <span
+                                            className={`ml-6 inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 transition-all duration-300
+        ${isOpen ? 'rotate-180 bg-slate-100' : 'bg-white'}
+        group-hover:scale-110
+    `}
+                                            aria-hidden="true"
+                                        >
+                                            <svg
+                                                viewBox="0 0 24 24"
+                                                className="h-6 w-6 text-slate-800"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                strokeWidth="3"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            >
+                                                <path d="M6 9l6 6 6-6" />
+                                            </svg>
+                                        </span>
 
-                        {/* CENTER IMAGE */}
-                        <div className="flex items-stretch justify-center">
-                            <img
-                                src="https://readdy.ai/api/search-image?query=Professional%20order%20management%20system%20dashboard%20with%20comprehensive%20order%20tracking%20interface%2C%20real-time%20execution%20monitoring%20displays%2C%20institutional%20trading%20workstation%20with%20sophisticated%20silver%20and%20navy%20color%20scheme%2C%20modern%20OMS%20platform%20showing%20order%20flow%20and%20portfolio%20positions&width=400&height=500&seq=oms-interface-compact&orientation=portrait"
-                                alt="Portfolio Margin Engine Dashboard"
-                                className="w-full h-full object-cover object-center rounded-xl shadow-sm border border-slate-200"
-                            />
-                        </div>
+                                    </button>
 
-                        {/* RIGHT COLUMN */}
-                        <div className="space-y-12 flex flex-col justify-between">
-                            {/* 4. Unified API & Framework */}
-                            <div className="relative pl-6">
-                                <div className="absolute left-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                                    Unified API & One-Library Framework
-                                </h3>
-                                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                                    <li>Provides real-time portfolio ingestion and automated margin output</li>
-                                    <li>Single integrated library with standardized API for fast system integration</li>
-                                </ul>
-                            </div>
-
-                            {/* 5. Operational Excellence */}
-                            <div className="relative pl-6">
-                                <div className="absolute left-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                                    Operational Excellence
-                                </h3>
-                                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                                    <li>Automatically updates clearing settlement ledger and margin books</li>
-                                    <li>Supports audit-ready workflows for risk and margin management teams</li>
-                                </ul>
-                            </div>
-
-                            {/* 6. Value Proposition */}
-                            <div className="relative pl-6">
-                                <div className="absolute left-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                                    Value Proposition
-                                </h3>
-                                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                                    <li>Real-time, high-performance portfolio margin analytics</li>
-                                    <li>Unified support for major global exchange risk models</li>
-                                    <li>Prevents under-one-sided exposure from excessive spread offsets</li>
-                                    <li>Accelerates onboarding of new products and clearing rules</li>
-                                    <li>Seamless integration with trading and risk ecosystems</li>
-                                </ul>
-                            </div>
-                        </div>
+                                    {/* content */}
+                                    <div
+                                        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[520px] opacity-100 mt-4' : 'max-h-0 opacity-0'
+                                            }`}
+                                    >
+                                        <ul className="list-disc pl-6 space-y-2 text-base md:text-lg text-slate-700 leading-relaxed">
+                                            {feature.bullets.map((b) => (
+                                                <li key={b}>{b}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </article>
+                            );
+                        })}
                     </div>
                 </div>
             </section>
-
         </div>
     );
 }

@@ -284,23 +284,20 @@ export default function WinwayGDTSPage() {
         className="py-24 bg-slate-900 border-t border-slate-800"
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-
-          {/* Title */}
-          <h2 className="text-3xl md:text-3xl font-cormorant font-semibold text-white mb-10">
+          <h2 className="text-2xl md:text-3xl font-cormorant font-semibold text-white mb-12">
             Global Market Access
           </h2>
 
-          {/* Animated description */}
           <FadeIn delay={150}>
-            <p className="text-3xl md:text-5xl font-cormorant font-semibold text-white leading-[2.4]">
-              Trade listed futures and options from leading global exchanges such as CME
-              Group, Eurex, HKEX, SGX, JPX, ICE, CBOE, as well as U.S. equity options
-              cleared by OCC – all through a single, integrated platform.
+            <p className="mx-auto max-w-6xl text-xl md:text-2xl font-helvetica text-white/90 leading-[2.1] tracking-[0.01em] text-center">
+              Trade listed futures and options from leading global exchanges such as CME Group,
+              Eurex, HKEX, SGX, JPX, ICE, CBOE,&nbsp;as well as U.S.&nbsp;equity options cleared by
+              OCC — all through a single, integrated platform.
             </p>
           </FadeIn>
-
         </div>
       </section>
+
 
       <section
         id="trader-app"
@@ -362,7 +359,7 @@ export default function WinwayGDTSPage() {
       {/* ================================
           MARKET DATA SYSTEM – expandable cards
       ================================= */}
-      <section id="market-data" className="py-20 bg-slate-50 border-t border-slate-200">
+      <section id="market-data" className="py-20 bg-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
@@ -519,26 +516,6 @@ export default function WinwayGDTSPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-slate-50 to-slate-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-6">
-            Ready to Modernize Your Derivatives Platform?
-          </h2>
-          <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-            Winway GDTS delivers a unified global futures &amp; options trading environment
-            with robust risk, market data, and back-office infrastructure.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-slate-900 hover:bg-black text-white px-8 py-4 font-semibold transition-colors whitespace-nowrap inline-flex items-center justify-center">
-              Schedule Consultation
-            </button>
-            <button className="border border-slate-400 hover:border-slate-600 text-slate-800 hover:text-slate-900 px-8 py-4 font-semibold transition-colors whitespace-nowrap inline-flex items-center justify-center">
-              Download Brochure
-            </button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

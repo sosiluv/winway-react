@@ -38,6 +38,8 @@ function FadeIn({ children, delay = 0 }) {
 export default function OMSPage() {
     const { t } = useTranslation('common');
     const navigate = useNavigate();
+    const [openFeatureIndex, setOpenFeatureIndex] = useState(null);
+
 
     const leftFeatures = [
         {
@@ -158,134 +160,185 @@ export default function OMSPage() {
                 </div>
             </section>
 
-            {/* Key Features Section */}
+            {/* ============================
+    KEY FEATURES SECTION (Accordion)
+============================ */}
             <section id="key-features" className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
                     {/* Header */}
                     <div className="mb-20 text-center">
                         <h2 className="text-4xl md:text-5xl font-extrabold text-[#0b172a] mb-4 font-cormorant">
                             Key Features
                         </h2>
-                        <p className="text-lg text-slate-700 leading-relaxed max-w-3xl mx-auto">
-                            Enterprise-grade messaging platform engineered for ultra-fast delivery, fault tolerance, and multi-channel communication with full monitoring and integration capabilities.
-                        </p>
                     </div>
 
-                    {/* Grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-stretch">
-                        {/* LEFT COLUMN */}
-                        <div className="space-y-12 flex flex-col justify-between">
-                            {/* 1. High Availability & Performance */}
-                            <div className="relative pr-6">
-                                <div className="absolute right-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                                    High Availability & Performance
-                                </h3>
-                                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                                    <li>Non-stop, fault-tolerant architecture ensuring continuous uptime</li>
-                                    <li>C-language based core engine for ultra-fast message processing</li>
-                                    <li>Separated send/receive modules for optimized stability</li>
-                                    <li>Direct carrier gateway connectivity for maximum reliability</li>
-                                    <li>Pre-duplication filtering for high-volume message delivery</li>
-                                </ul>
-                            </div>
+                    {/* Accordion */}
+                    <div className="divide-y divide-slate-300 max-w-5xl mx-auto">
 
-                            {/* 2. Scalability & Stability */}
-                            <div className="relative pr-6">
-                                <div className="absolute right-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                                    Scalability & Stability
-                                </h3>
-                                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                                    <li>Dynamic scaling to support expanding message traffic</li>
-                                    <li>Automated recovery and proactive failure detection</li>
-                                    <li>Real-time memory and queue monitoring</li>
-                                    <li>End-to-end diagnostics and traffic analytics for issue prevention</li>
-                                </ul>
-                            </div>
+                        {[
+                            {
+                                title: 'High Availability & Performance',
+                                bullets: [
+                                    'Non-stop, fault-tolerant architecture ensuring continuous uptime',
+                                    'C-language based core engine for ultra-fast message processing',
+                                    'Separated send/receive modules for optimized stability',
+                                    'Direct carrier gateway connectivity for maximum reliability',
+                                    'Pre-duplication filtering for high-volume message delivery',
+                                ],
+                            },
+                            {
+                                title: 'Scalability & Stability',
+                                bullets: [
+                                    'Dynamic scaling to support expanding message traffic',
+                                    'Automated recovery and proactive failure detection',
+                                    'Real-time memory and queue monitoring',
+                                    'End-to-end diagnostics and traffic analytics for issue prevention',
+                                ],
+                            },
+                            {
+                                title: 'Advanced Delivery Management',
+                                bullets: [
+                                    'Intelligent load balancing and optimized distribution control',
+                                    'Web-based bulk delivery dashboard and management interface',
+                                    'Message history lookup and one-click resend for recovery',
+                                    'Time-based delivery scheduling for business workflows',
+                                    'Multi-priority routing for mission-critical services',
+                                ],
+                            },
+                            {
+                                title: 'Multi-Channel Messaging',
+                                bullets: [
+                                    'Alimtalk (Kakao Business Message) routing with failover',
+                                    'Two-way SMS (MO) support for interactive services',
+                                    'Global SMS delivery for international communication',
+                                    'Call-forwarding, anti-spoofing, and secure routing features',
+                                ],
+                            },
+                            {
+                                title: 'Reporting & Compliance',
+                                bullets: [
+                                    'Real-time delivery statistics and performance metrics',
+                                    'Comprehensive audit logs and exportable reports',
+                                    'Full monitoring of processes and system components',
+                                ],
+                            },
+                            {
+                                title: 'Integration & Flexibility',
+                                bullets: [
+                                    'Seamless enterprise integration through standardized APIs',
+                                    'Cross-service monitoring and operational linkage',
+                                    'Automatic fallback routing for service continuity',
+                                ],
+                            },
+                        ].map((block, idx) => {
+                            const isOpen = openFeatureIndex === idx;
 
-                            {/* 3. Advanced Delivery Management */}
-                            <div className="relative pr-6">
-                                <div className="absolute right-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                                    Advanced Delivery Management
-                                </h3>
-                                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                                    <li>Intelligent load balancing and optimized distribution control</li>
-                                    <li>Web-based bulk delivery dashboard and management interface</li>
-                                    <li>Message history lookup and one-click resend for recovery</li>
-                                    <li>Time-based delivery scheduling for business workflows</li>
-                                    <li>Multi-priority routing for mission-critical services</li>
-                                </ul>
-                            </div>
-                        </div>
+                            return (
+                                <article key={block.title} className="py-6">
+                                    <button
+                                        type="button"
+                                        onClick={() =>
+                                            setOpenFeatureIndex(isOpen ? null : idx)
+                                        }
+                                        className="group w-full flex items-center justify-between text-left"
+                                    >
+                                        <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] font-cormorant tracking-wide">
+                                            {block.title}
+                                        </h3>
 
-                        {/* CENTER IMAGE */}
-                        <div className="flex items-stretch justify-center">
-                            <img
-                                src="https://readdy.ai/api/search-image?query=Professional%20order%20management%20system%20dashboard%20with%20comprehensive%20order%20tracking%20interface%2C%20real-time%20execution%20monitoring%20displays%2C%20institutional%20trading%20workstation%20with%20sophisticated%20silver%20and%20navy%20color%20scheme%2C%20modern%20OMS%20platform%20showing%20order%20flow%20and%20portfolio%20positions&width=400&height=500&seq=oms-interface-compact&orientation=portrait"
-                                alt="Messaging System Dashboard"
-                                className="w-full h-full object-cover object-center rounded-xl shadow-sm border border-slate-200"
-                            />
-                        </div>
+                                        {/* Bold arrow */}
+                                        <span
+                                            className={`ml-6 inline-flex h-11 w-11 items-center justify-center rounded-full
+                  border border-slate-300 text-slate-800 transition-all duration-300
+                  ${isOpen ? 'rotate-180 bg-slate-100' : 'bg-white'}
+                  group-hover:scale-110 group-hover:border-slate-500
+                `}
+                                        >
+                                            <i className="ri-arrow-down-s-line text-2xl font-bold" />
+                                        </span>
+                                    </button>
 
-                        {/* RIGHT COLUMN */}
-                        <div className="space-y-12 flex flex-col justify-between">
-                            {/* 4. Multi-Channel Messaging */}
-                            <div className="relative pl-6">
-                                <div className="absolute left-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                                    Multi-Channel Messaging
-                                </h3>
-                                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                                    <li>Alimtalk (Kakao Business Message) routing with failover</li>
-                                    <li>Two-way SMS (MO) support for interactive services</li>
-                                    <li>Global SMS delivery for international communication</li>
-                                    <li>Call-forwarding, anti-spoofing, and secure routing features</li>
-                                </ul>
-                            </div>
-
-                            {/* 5. Reporting & Compliance */}
-                            <div className="relative pl-6">
-                                <div className="absolute left-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                                    Reporting & Compliance
-                                </h3>
-                                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                                    <li>Real-time delivery statistics and performance metrics</li>
-                                    <li>Comprehensive audit logs and exportable reports</li>
-                                    <li>Full monitoring of processes and system components</li>
-                                </ul>
-                            </div>
-
-                            {/* 6. Integration & Flexibility */}
-                            <div className="relative pl-6">
-                                <div className="absolute left-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                                    Integration & Flexibility
-                                </h3>
-                                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                                    <li>Seamless enterprise integration through standardized APIs</li>
-                                    <li>Cross-service monitoring and operational linkage</li>
-                                    <li>Automatic fallback routing for service continuity</li>
-                                </ul>
-                            </div>
-                        </div>
+                                    <div
+                                        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[520px] opacity-100 mt-4' : 'max-h-0 opacity-0'
+                                            }`}
+                                    >
+                                        <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800 pl-6 list-disc">
+                                            {block.bullets.map(item => (
+                                                <li key={item}>{item}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </article>
+                            );
+                        })}
                     </div>
                 </div>
             </section>
 
 
+            <section id="benefits" className="py-24 bg-[#f2f3f5]">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            {/* Closing Section */}
-            <section className="py-20 bg-gradient-to-r from-slate-50 to-slate-100">
-                <div className="max-w-6xl mx-auto px-4 text-center">
-                    <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                        Performance You Can Trust
+                    {/* Section Title */}
+                    <h2 className="text-4xl md:text-5xl font-cormorant font-semibold text-slate-900 mb-12">
+                        Benefits
                     </h2>
-                    <p className="text-lg text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-                        F1Win offers the foundation for a next-generation trading environment — delivering speed, precision, and stability demanded by today’s competitive financial markets.
-                    </p>
+
+                    {/* Divider-based horizontal alignment list */}
+                    <div className="divide-y divide-slate-300">
+
+                        {/* 1 */}
+                        <article className="py-6 flex flex-col md:flex-row md:items-start md:justify-between">
+                            <h3 className="text-xl md:text-2xl font-cormorant font-semibold text-slate-900 md:w-1/3">
+                                Guaranteed Reliability
+                            </h3>
+                            <p className="mt-2 md:mt-0 md:w-2/3 text-base md:text-lg text-slate-700 leading-relaxed">
+                                Designed for financial-grade uptime and consistency.
+                            </p>
+                        </article>
+
+                        {/* 2 */}
+                        <article className="py-6 flex flex-col md:flex-row md:items-start md:justify-between">
+                            <h3 className="text-xl md:text-2xl font-cormorant font-semibold text-slate-900 md:w-1/3">
+                                High-Volume Capability
+                            </h3>
+                            <p className="mt-2 md:mt-0 md:w-2/3 text-base md:text-lg text-slate-700 leading-relaxed">
+                                Handles peak load environments with ease.
+                            </p>
+                        </article>
+
+                        {/* 3 */}
+                        <article className="py-6 flex flex-col md:flex-row md:items-start md:justify-between">
+                            <h3 className="text-xl md:text-2xl font-cormorant font-semibold text-slate-900 md:w-1/3">
+                                Secure & Compliant
+                            </h3>
+                            <p className="mt-2 md:mt-0 md:w-2/3 text-base md:text-lg text-slate-700 leading-relaxed">
+                                Enterprise-level security and audit trails.
+                            </p>
+                        </article>
+
+                        {/* 4 */}
+                        <article className="py-6 flex flex-col md:flex-row md:items-start md:justify-between">
+                            <h3 className="text-xl md:text-2xl font-cormorant font-semibold text-slate-900 md:w-1/3">
+                                Flexible Integration
+                            </h3>
+                            <p className="mt-2 md:mt-0 md:w-2/3 text-base md:text-lg text-slate-700 leading-relaxed">
+                                Works seamlessly with core systems and APIs.
+                            </p>
+                        </article>
+
+                        {/* 5 */}
+                        <article className="py-6 flex flex-col md:flex-row md:items-start md:justify-between">
+                            <h3 className="text-xl md:text-2xl font-cormorant font-semibold text-slate-900 md:w-1/3">
+                                Operational Efficiency
+                            </h3>
+                            <p className="mt-2 md:mt-0 md:w-2/3 text-base md:text-lg text-slate-700 leading-relaxed">
+                                Reduces downtime, manual work, and delivery failures.
+                            </p>
+                        </article>
+
+                    </div>
                 </div>
             </section>
         </div>

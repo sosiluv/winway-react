@@ -85,8 +85,7 @@ export default function OMSPage() {
       <section className="relative py-20 bg-slate-900 text-center">
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 font-cormorant">
-            ArmisWin <br />
-            Real-Time Risk Management System
+            ArmisWin | Real-Time RMS
           </h1>
           <p className="text-xl text-slate-300 leading-relaxed mb-10">
             Real-time P&L monitoring at the account or individual position level. <br />
@@ -153,7 +152,7 @@ export default function OMSPage() {
       {/* Functions Section */}
       <section
         id="functions"
-        className="py-28 bg-gradient-to-b from-[#f7f8f9] via-[#f4f5f6] to-[#eef0f2] border-t border-slate-300"
+        className="py-28 bg-gradient-to-b from-[#f7f8f9] via-[#f4f5f6] to-[#eef0f2]"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -219,136 +218,108 @@ export default function OMSPage() {
           </div>
         </div>
       </section>
-
-      {/* Key Features Section */}
-      <section id="key-features" className="py-20 bg-white">
+      {/* Key Features Section – Image Removed, Clean Institutional Layout */}
+      <section id="key-features" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
           {/* Header */}
           <div className="mb-20 text-center">
             <h2 className="text-4xl md:text-5xl font-extrabold text-[#0b172a] mb-4 font-cormorant">
               Key Features
             </h2>
-            <p className="text-lg text-slate-700 leading-relaxed max-w-3xl mx-auto">
-              Advanced real-time control and monitoring capabilities designed for institutional-grade risk management.
-            </p>
           </div>
 
-          {/* Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-stretch">
-            {/* LEFT COLUMN */}
-            <div className="space-y-12 flex flex-col justify-between">
-              {/* 1. Tick-by-Tick Market Price Tracking */}
-              <div className="relative pr-6">
-                <div className="absolute right-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                  Tick-by-Tick Market Price Tracking
-                </h3>
-                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                  <li>Continuous real-time monitoring of price movements</li>
-                  <li>Ensures microsecond-level responsiveness</li>
-                  <li>Supports institutional-grade precision</li>
-                  <li>Ideal for high-frequency and automated trading</li>
-                </ul>
-              </div>
+          {/* Features Grid – 2 Column, Balanced */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16">
 
-              {/* 2. Multi-Account Monitoring */}
-              <div className="relative pr-6">
-                <div className="absolute right-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                  Multi-Account Monitoring
-                </h3>
-                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                  <li>Simultaneous oversight of multiple portfolios</li>
-                  <li>Unified interface for dealers and asset managers</li>
-                  <li>Cross-account exposure visualization</li>
-                  <li>Hierarchical control for risk managers</li>
-                </ul>
-              </div>
-
-              {/* 3. Configurable Alert Channels */}
-              <div className="relative pr-6">
-                <div className="absolute right-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                  Configurable Alert Channels
-                </h3>
-                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                  <li>Instant alerts via SMS, email, and dashboard pop-ups</li>
-                  <li>Fully customizable notification logic</li>
-                  <li>Granular control per account or asset type</li>
-                  <li>Ensures rapid response to threshold breaches</li>
-                </ul>
-              </div>
+            {/* 1. Tick-by-Tick Market Price Tracking */}
+            <div className="relative pl-6">
+              <div className="absolute left-0 top-1 h-full w-[2px] bg-[#1b2a4e]/60 rounded-full" />
+              <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
+                Tick-by-Tick Market Price Tracking
+              </h3>
+              <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
+                <li>Continuous real-time monitoring of price movements</li>
+                <li>Ensures microsecond-level responsiveness</li>
+                <li>Supports institutional-grade precision</li>
+                <li>Ideal for high-frequency and automated trading</li>
+              </ul>
             </div>
 
-            {/* CENTER IMAGE */}
-            <div className="flex items-stretch justify-center">
-              <img
-                src="https://readdy.ai/api/search-image?query=Professional%20order%20management%20system%20dashboard%20with%20comprehensive%20order%20tracking%20interface%2C%20real-time%20execution%20monitoring%20displays%2C%20institutional%20trading%20workstation%20with%20sophisticated%20silver%20and%20navy%20color%20scheme%2C%20modern%20OMS%20platform%20showing%20order%20flow%20and%20portfolio%20positions&width=400&height=500&seq=oms-interface-compact&orientation=portrait"
-                alt="Institutional Risk Management Dashboard"
-                className="w-full h-full object-cover object-center rounded-xl shadow-sm"
-              />
+            {/* 2. Multi-Account Monitoring */}
+            <div className="relative pl-6">
+              <div className="absolute left-0 top-1 h-full w-[2px] bg-[#1b2a4e]/60 rounded-full" />
+              <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
+                Multi-Account Monitoring
+              </h3>
+              <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
+                <li>Simultaneous oversight of multiple portfolios</li>
+                <li>Unified interface for dealers and asset managers</li>
+                <li>Cross-account exposure visualization</li>
+                <li>Hierarchical control for risk managers</li>
+              </ul>
             </div>
 
-            {/* RIGHT COLUMN */}
-            <div className="space-y-12 flex flex-col justify-between">
-              {/* 4. Automatic Position Liquidation / Reduction */}
-              <div className="relative pl-6">
-                <div className="absolute left-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                  Automatic Position Liquidation / Reduction
-                </h3>
-                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                  <li>Automatic execution when thresholds are met</li>
-                  <li>Supports partial or full liquidation strategies</li>
-                  <li>Integrated with risk limits and margin parameters</li>
-                  <li>Minimizes latency during high-volatility events</li>
-                </ul>
-              </div>
-
-              {/* 5. Comprehensive Audit Logs */}
-              <div className="relative pl-6">
-                <div className="absolute left-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                  Comprehensive Audit Logs
-                </h3>
-                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                  <li>Full traceability of all trade and system actions</li>
-                  <li>Compliant with institutional audit standards</li>
-                  <li>Supports export for regulatory review</li>
-                  <li>Preserves historical risk and execution data</li>
-                </ul>
-              </div>
-
-              {/* 6. Scalable Architecture */}
-              <div className="relative pl-6">
-                <div className="absolute left-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
-                  Scalable Architecture
-                </h3>
-                <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
-                  <li>Real-time processing of multiple portfolios</li>
-                  <li>Adaptive scaling for enterprise workloads</li>
-                  <li>Cloud, on-premise, and hybrid configurations</li>
-                  <li>Consistent performance under heavy data load</li>
-                </ul>
-              </div>
+            {/* 3. Configurable Alert Channels */}
+            <div className="relative pl-6">
+              <div className="absolute left-0 top-1 h-full w-[2px] bg-[#1b2a4e]/60 rounded-full" />
+              <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
+                Configurable Alert Channels
+              </h3>
+              <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
+                <li>Instant alerts via SMS, email, and dashboard pop-ups</li>
+                <li>Fully customizable notification logic</li>
+                <li>Granular control per account or asset type</li>
+                <li>Ensures rapid response to threshold breaches</li>
+              </ul>
             </div>
+
+            {/* 4. Automatic Position Liquidation / Reduction */}
+            <div className="relative pl-6">
+              <div className="absolute left-0 top-1 h-full w-[2px] bg-[#1b2a4e]/60 rounded-full" />
+              <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
+                Automatic Position Liquidation / Reduction
+              </h3>
+              <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
+                <li>Automatic execution when thresholds are met</li>
+                <li>Supports partial or full liquidation strategies</li>
+                <li>Integrated with risk limits and margin parameters</li>
+                <li>Minimizes latency during high-volatility events</li>
+              </ul>
+            </div>
+
+            {/* 5. Comprehensive Audit Logs */}
+            <div className="relative pl-6">
+              <div className="absolute left-0 top-1 h-full w-[2px] bg-[#1b2a4e]/60 rounded-full" />
+              <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
+                Comprehensive Audit Logs
+              </h3>
+              <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
+                <li>Full traceability of all trade and system actions</li>
+                <li>Compliant with institutional audit standards</li>
+                <li>Supports export for regulatory review</li>
+                <li>Preserves historical risk and execution data</li>
+              </ul>
+            </div>
+
+            {/* 6. Scalable Architecture */}
+            <div className="relative pl-6">
+              <div className="absolute left-0 top-1 h-full w-[2px] bg-[#1b2a4e]/60 rounded-full" />
+              <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-4 font-cormorant tracking-wide">
+                Scalable Architecture
+              </h3>
+              <ul className="space-y-1.5 text-[15px] md:text-base leading-relaxed text-slate-800">
+                <li>Real-time processing of multiple portfolios</li>
+                <li>Adaptive scaling for enterprise workloads</li>
+                <li>Cloud, on-premise, and hybrid configurations</li>
+                <li>Consistent performance under heavy data load</li>
+              </ul>
+            </div>
+
           </div>
         </div>
       </section>
 
-
-      {/* Closing Section */}
-      <section className="py-20 bg-gradient-to-r from-slate-50 to-slate-100">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-6">
-            Performance You Can Trust
-          </h2>
-          <p className="text-lg text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            F1Win offers the foundation for a next-generation trading environment — delivering speed, precision, and stability demanded by today’s competitive financial markets.
-          </p>
-        </div>
-      </section>
     </div>
   );
 }

@@ -188,7 +188,7 @@ export default function WinwayKDTSPage() {
       ================================= */}
             <section
                 id="trader-application"
-                className="py-24 bg-slate-100"
+                className="py-24 bg-gray-100"
             >
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-4xl md:text-5xl font-cormorant font-semibold text-slate-900 mb-20 text-center">
@@ -270,31 +270,6 @@ export default function WinwayKDTSPage() {
                 </div>
             </section>
 
-            {/* ================================
-          CTA
-      ================================= */}
-            <section className="py-20 bg-gradient-to-r from-slate-50 to-slate-100">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                        Ready to Modernize Your Derivatives Platform?
-                    </h2>
-
-                    <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-                        Winway KDTS delivers a unified global F&O trading environment with professional-grade risk,
-                        analytics, and operational infrastructure.
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="bg-slate-900 hover:bg-black text-white px-8 py-4 font-semibold transition-colors">
-                            Schedule Consultation
-                        </button>
-
-                        <button className="border border-slate-400 hover:border-slate-600 text-slate-800 hover:text-slate-900 px-8 py-4 font-semibold transition-colors">
-                            Download Brochure
-                        </button>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 }

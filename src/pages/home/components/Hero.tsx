@@ -41,7 +41,7 @@ export default function Hero() {
             }`}
         >
           <h3 className="text-lg md:text-xl font-cormorant font-semibold tracking-[0.35em] text-[#d1d5db] mb-4">
-            WINWAY SYSTEMS, INC.
+            WINWAY, Inc.
           </h3>
         </div>
 
@@ -69,7 +69,7 @@ export default function Hero() {
             }`}
         >
           <p className="text-base md:text-lg text-[#e5e8ec]/95 font-light tracking-[0.12em]">
-            Delivering trusted financial software for leading banks — grounded in decades of institutional expertise.
+            Delivering trusted financial software to leading institutions — refined through decades of industry expertise.
           </p>
         </div>
       </div>

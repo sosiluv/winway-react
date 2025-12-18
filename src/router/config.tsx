@@ -11,20 +11,29 @@ import WinwayGETSPage from '../pages/trading-systems/winway-gets/page';
 import WinwayFITSPage from '../pages/trading-systems/winway-fits/page';
 import WinwayCFDPage from '../pages/trading-systems/winway-cfd-equity/page';
 import WinwayGOLDPage from '../pages/trading-systems/winway-gold/page';
-import PlatformsPage from '../pages/platforms/page';
-import ServerPlatformPage from '../pages/platforms/server-platform/page';
-import MobilePlatformPage from '../pages/platforms/mobile-platform/page';
-import PCClientPlatformPage from '../pages/platforms/pc-client-platform/page';
-import CommunicationMiddlewarePage from '../pages/platforms/communication-middleware/page';
+
+import FrameworksPage from '../pages/platforms/page';
+import TPMonitorPage from '../pages/platforms/tp-monitor/page';
+import IDEPage from '../pages/platforms/ide/page';
+import PCClientPage from '../pages/platforms/pc-client/page';
+
 import SolutionsPage from '../pages/solutions/page';
-import PropTradingPlatformPage from '../pages/solutions/ForteAlgo/page';
 import OMSPage from '../pages/solutions/OMS/page';
+import PropTradingPlatformPage from '../pages/solutions/ForteAlgo/page';
 import MarketDataProcessingPage from '../pages/solutions/ArmisWin/page';
-import HipassFIXPage from "../pages/solutions/HipassFIX/page";
-import WinFeedEnginePage from '../pages/solutions/Winfeedengine/page';
+import WinFIXPage from '../pages/solutions/WinFIX/page';
+import WinFeedEnginePage from '../pages/solutions/WinFeedEngine/page';
 import PRIMAPage from '../pages/solutions/PRIMA/page';
+import TrustWinPage from '../pages/solutions/TrustWin/page';
 import ChammaePage from '../pages/solutions/Chammae/page';
 import TrustMessengerEnterprisePage from '../pages/solutions/TrustMessengerEnterprise/page';
+
+import ServicesPage from '../pages/services/page';
+import FXDMAHubPage from '../pages/services/fx-dma-hub/page';
+import KRXReferencePage from '../pages/services/krx-reference/page';
+import KFundInfoPage from '../pages/services/k-fund-info/page';
+
+
 import ProjectsPage from '../pages/projects/page';
 import WinwayPage from '../pages/winway/page';
 import NotFound from '../pages/NotFound';
@@ -75,24 +84,20 @@ const routes: RouteObject[] = [
     element: <WinwayGOLDPage />,
   },
   {
-    path: '/platforms',
-    element: <PlatformsPage />,
+    path: '/frameworks',
+    element: <FrameworksPage />,
   },
   {
-    path: '/platforms/server-platform',
-    element: <ServerPlatformPage />,
+    path: '/frameworks/tp-monitor',
+    element: <TPMonitorPage />,
   },
   {
-    path: '/platforms/mobile-platform',
-    element: <MobilePlatformPage />,
+    path: '/frameworks/ide',
+    element: <IDEPage />,
   },
   {
-    path: '/platforms/pc-client-platform',
-    element: <PCClientPlatformPage />,
-  },
-  {
-    path: '/platforms/communication-middleware',
-    element: <CommunicationMiddlewarePage />,
+    path: '/frameworks/pc-client',
+    element: <PCClientPage />,
   },
  {
   path: '/solutions',
@@ -111,8 +116,8 @@ const routes: RouteObject[] = [
   element: <MarketDataProcessingPage />,
 },
 {
-  path: '/solutions/hipassfix',
-  element: <HipassFIXPage />,
+  path: '/solutions/winfix',
+  element: <WinFIXPage />,
 },
 {
   path: '/solutions/winfeedengine',
@@ -122,6 +127,10 @@ const routes: RouteObject[] = [
   path: '/solutions/prima',
   element: <PRIMAPage />,
 },
+  {
+    path: '/solutions/trustwin',
+    element: <TrustWinPage />,
+  },
 {
   path: '/solutions/chammae',
   element: <ChammaePage />,
@@ -129,6 +138,22 @@ const routes: RouteObject[] = [
 {
   path:'/solutions/trustmessenger-enterprise',
   element: <TrustMessengerEnterprisePage />,
+},
+ {
+    path: '/services',
+    element: <ServicesPage />,
+  },
+{
+  path:'/services/fx-dma-hub',
+  element: <FXDMAHubPage />,
+},
+{
+  path: '/services/krx-reference',
+  element: <KRXReferencePage />,
+},
+{
+  path:'/services/k-fund-info',
+  element: <KFundInfoPage />,
 },
   {
     path: '/projects',

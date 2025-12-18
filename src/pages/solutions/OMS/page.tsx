@@ -85,8 +85,7 @@ export default function OMSPage() {
       <section className="relative py-20 bg-slate-900 text-center">
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 font-cormorant">
-            F1WIN<br />
-            ORDER MANAGEMENT SYSTEM
+            F1WIN | Order Management System
           </h1>
           <p className="text-xl text-slate-300 leading-relaxed mb-10">
             Shared Memory-Based Order Management System for Low-Latency Trading
@@ -116,50 +115,62 @@ export default function OMSPage() {
         </div>
       </section>
 
-      {/* Overview Section (animated) */}
-      <section id="overview" className="py-40 bg-white">
+      <section id="overview" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <h2 className="text-4xl md:text-5xl font-semibold text-slate-800 leading-relaxed font-cormorant">
-              F1Win delivers<br />
-              ultra-fast, event-driven order management across the entire trading lifecycle. <br />
-              <br />
-              Built for high-frequency and high-volume environments, it minimizes execution latency and ensures seamless, reliable performance
-              under the most demanding market conditions.
-            </h2>
+          <FadeIn delay={0}>
+            <div className="max-w-4xl">
+              <h3 className="text-sm md:text-base font-semibold text-slate-500 mb-6 tracking-widest uppercase">
+                The Next Generation of Trading Platform
+              </h3>
+
+              <p className="text-2xl md:text-3xl font-cormorant text-slate-900 leading-[1.9] tracking-normal">
+                <span className="block">
+                  Experience the next generation of trading with WinEdge — a cutting-edge
+                  Order Management System built for high-performance trading across
+                  multi-asset markets.
+                </span>
+
+                <span className="block mt-8">
+                  Whether you're dealing in equities, futures, options, bonds, foreign
+                  exchange or gold, our platform ensures lightning-fast, reliable, and
+                  efficient order handling to meet the demands of today’s competitive
+                  trading environments.
+                </span>
+              </p>
+            </div>
           </FadeIn>
         </div>
       </section>
 
       {/* Applications Section */}
-      <section id="applications" className="py-24 bg-[#e6e8eb]">
+      <section id="applications" className="py-28 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-20 text-center">
-            <h2 className="text-4xl md:text-5xl font-semibold text-slate-800 mb-4 font-cormorant">
+          <div className="mb-24 text-center">
+            <h2 className="text-4xl md:text-5xl font-semibold text-slate-800 mb-6 font-cormorant">
               Applications
             </h2>
-            <p className="text-lg text-slate-600">
+            <p className="text-base md:text-lg text-slate-600">
               Empowering diverse trading environments through precision and performance
             </p>
           </div>
 
-          {/* Animated Card Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+          {/* Card Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-12">
             {[
-              { title: 'High-Frequency Trading', icon: 'ri-flashlight-line' },
+              { title: 'High-Frequency', icon: 'ri-flashlight-line' },
               { title: 'Broker-Dealers Offering DMA', icon: 'ri-exchange-dollar-line' },
               { title: 'Prop Trading', icon: 'ri-line-chart-line' },
-              { title: 'Market Making & Liquidity Provision Trading', icon: 'ri-funds-line' },
+              { title: 'MM & LP', icon: 'ri-funds-line' },
               { title: 'Arbitrage Trading', icon: 'ri-exchange-box-line' },
               { title: 'Algorithm Trading', icon: 'ri-cpu-line' },
             ].map((item, index) => (
               <FadeIn key={index} delay={index * 120}>
-                <div className="relative group overflow-hidden shadow-lg transition-all duration-500 rounded-none">
-                  <div className="w-full h-64 bg-[#0a1224] flex flex-col justify-end relative">
-                    <div className="absolute inset-0 bg-[#0a1224] opacity-90"></div>
-                    <div className="relative z-10 text-center px-4 pb-6">
-                      <i className={`${item.icon} text-white text-3xl mb-4`}></i>
-                      <h3 className="text-white text-lg font-semibold font-cormorant leading-snug">
+                <div className="group">
+                  {/* Increased box size via aspect + padding */}
+                  <div className="w-full aspect-[4/5] bg-[#0a1224] flex items-center justify-center shadow-md transition-transform duration-300 group-hover:-translate-y-1">
+                    <div className="text-center px-6">
+                      <i className={`${item.icon} text-white text-4xl mb-6 block`}></i>
+                      <h3 className="text-white text-base md:text-lg font-helvetica leading-snug tracking-wide">
                         {item.title}
                       </h3>
                     </div>
@@ -171,107 +182,69 @@ export default function OMSPage() {
         </div>
       </section>
 
-      {/* Key Features Section */}
-      <section id="key-features" className="py-20 bg-white">
+      {/* Key Features Section – Image Removed, Clean Institutional Layout */}
+      <section id="key-features" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
           {/* Header */}
-          <div className="mb-20 text-center">
+          <div className="mb-24 text-center">
             <h2 className="text-4xl md:text-5xl font-extrabold text-[#0b172a] mb-4 font-cormorant">
               Key Features
             </h2>
-            <p className="text-lg text-slate-700 leading-relaxed max-w-3xl mx-auto">
-              Professional order management capabilities designed for ultra-low-latency trading operations.
-            </p>
           </div>
 
-          {/* 3-Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-stretch">
-            {/* LEFT COLUMN */}
-            <div className="space-y-12 flex flex-col justify-between">
-              {[
-                {
-                  title: 'Tick-by-Tick Market Price Tracking',
-                  description:
-                    'Ensures precise and timely risk control by continuously monitoring market price changes in real time.',
-                },
-                {
-                  title: 'Multi-Account Monitoring',
-                  description:
-                    'Supports brokers, dealers, and asset managers by tracking multiple accounts simultaneously from one unified dashboard.',
-                },
-                {
-                  title: 'Configurable Alert Channels',
-                  description:
-                    'Instant alerts via SMS, email, or dashboard pop-ups keep users informed of critical market events and thresholds.',
-                },
-              ].map((feature, index) => (
-                <div key={index} className="relative pr-6">
-                  <div className="absolute right-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                  <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-3 font-cormorant tracking-wide">
-                    {feature.title}
-                  </h3>
-                  <p className="text-[15px] md:text-base leading-relaxed text-slate-800">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+          {/* Features Grid – 2 Column, Balanced */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16">
 
-            {/* CENTER IMAGE */}
-            <div className="flex items-stretch justify-center">
-              <img
-                src="https://readdy.ai/api/search-image?query=Professional%20order%20management%20system%20dashboard%20with%20comprehensive%20order%20tracking%20interface%2C%20real-time%20execution%20monitoring%20displays%2C%20institutional%20trading%20workstation%20with%20sophisticated%20silver%20and%20navy%20color%20scheme%2C%20modern%20OMS%20platform%20showing%20order%20flow%20and%20portfolio%20positions&width=400&height=500&seq=oms-interface-compact&orientation=portrait"
-                alt="Institutional Risk Management Dashboard"
-                className="w-full h-full object-cover object-center rounded-xl shadow-sm border border-slate-200"
-              />
-            </div>
+            {[
+              {
+                title: 'Speed Advantage',
+                description:
+                  'Lightning-fast execution boosts fill rates and reduces slippage by processing order flow with microsecond latency from entry to execution.',
+              },
+              {
+                title: 'Pre-Trade Risk & Compliance Checks',
+                description:
+                  'Performs real-time validation of trading limits, quote accuracy, and compliance rules before execution.',
+              },
+              {
+                title: 'Event-Driven Architecture',
+                description:
+                  'Asynchronous, event-based design processes multiple market and client events in parallel to maximize throughput.',
+              },
+              {
+                title: 'Horizontal Scalability',
+                description:
+                  'Distributed, microservices-based architecture scales seamlessly to handle growing order volumes without performance degradation.',
+              },
+              {
+                title: 'Customization',
+                description:
+                  'Flexible execution logic supports strategy-specific rules and parameters tailored to asset classes, products, and trading styles.',
+              },
+              {
+                title: 'Exchange & Broker Connectivity',
+                description:
+                  'Supports multiple exchange protocols including FIX and iLink3, enabling seamless integration with brokers and liquidity providers.',
+              },
+            ].map((feature, index) => (
+              <div key={index} className="relative pl-6">
+                {/* Accent Line */}
+                <div className="absolute left-0 top-1 h-full w-[2px] bg-[#1b2a4e]/60 rounded-full" />
 
-            {/* RIGHT COLUMN */}
-            <div className="space-y-12 flex flex-col justify-between">
-              {[
-                {
-                  title: 'Automatic Position Liquidation / Reduction',
-                  description:
-                    'Executes automatic liquidation or partial reduction based on user-defined ratios to safeguard portfolio value.',
-                },
-                {
-                  title: 'Comprehensive Audit Logs',
-                  description:
-                    'Provides full traceability of all trade and system actions, meeting institutional compliance standards.',
-                },
-                {
-                  title: 'Scalable Architecture',
-                  description:
-                    'Processes multiple portfolios in real time with minimal latency, ensuring consistent performance as demand grows.',
-                },
-              ].map((feature, index) => (
-                <div key={index} className="relative pl-6">
-                  <div className="absolute left-0 top-0 bottom-0 w-[1.5px] bg-[#1b2a4e]/50 rounded-full" />
-                  <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-3 font-cormorant tracking-wide">
-                    {feature.title}
-                  </h3>
-                  <p className="text-[15px] md:text-base leading-relaxed text-slate-800">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+                <h3 className="text-xl md:text-2xl font-bold text-[#0b172a] mb-3 font-cormorant tracking-wide">
+                  {feature.title}
+                </h3>
+                <p className="text-[15px] md:text-base leading-relaxed text-slate-800 max-w-xl">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+
           </div>
         </div>
       </section>
 
-
-      {/* Closing Section */}
-      <section className="py-20 bg-gradient-to-r from-slate-50 to-slate-100">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-6">
-            Performance You Can Trust
-          </h2>
-          <p className="text-lg text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            F1Win offers the foundation for a next-generation trading environment — delivering speed, precision, and stability demanded by today’s competitive financial markets.
-          </p>
-        </div>
-      </section>
     </div>
   );
 }

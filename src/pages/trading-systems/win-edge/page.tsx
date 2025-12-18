@@ -246,15 +246,6 @@ export default function WinEdgePropTradingPage() {
               >
                 Features
               </button>
-              <button
-                onClick={() => scrollToSection('architecture', 'architecture')}
-                className={`text-sm font-medium pb-1 border-b-2 cursor-pointer transition-colors whitespace-nowrap ${currentSection === 'architecture'
-                  ? 'text-white border-white'
-                  : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'
-                  }`}
-              >
-                System Architecture
-              </button>
             </div>
           </div>
         </div>
@@ -561,28 +552,6 @@ export default function WinEdgePropTradingPage() {
               )}
             </article>
 
-          </div>
-        </div>
-      </section>
-
-
-      <section className="py-20 bg-gradient-to-r from-slate-50 to-slate-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-6">
-            Ready to Elevate Your Prop Trading?
-          </h2>
-          <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-            WinEdge equips professional traders and institutions with the tools needed to
-            capture opportunities, manage risk and execute with confidence in today&apos;s
-            dynamic markets.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-slate-900 hover:bg-black text-white px-8 py-4 font-semibold transition-colors whitespace-nowrap inline-flex items-center justify-center">
-              Schedule Consultation
-            </button>
-            <button className="border border-slate-400 hover:border-slate-600 text-slate-800 hover:text-slate-900 px-8 py-4 font-semibold transition-colors whitespace-nowrap inline-flex items-center justify-center">
-              Download Brochure
-            </button>
           </div>
         </div>
       </section>
