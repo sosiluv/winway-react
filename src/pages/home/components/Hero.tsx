@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
-import bgImage from '../../../images/image17.jpg';
 
 export default function Hero() {
   const { t } = useTranslation('common');
@@ -41,7 +40,7 @@ export default function Hero() {
             }`}
         >
           <h3 className="text-lg md:text-xl font-cormorant font-semibold tracking-[0.35em] text-[#d1d5db] mb-4">
-            WINWAY, Inc.
+            {t('companyName')}
           </h3>
         </div>
 
@@ -57,9 +56,9 @@ export default function Hero() {
             }`}
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-cormorant leading-snug mb-6 text-[#f8f9fa] tracking-[0.04em] drop-shadow-[0_2px_8px_rgba(255,255,255,0.1)] whitespace-pre-line">
-            SOFTWARE SOLUTIONS BUILT FOR
+            {t('heroTitle')}
             {'\n'}
-            CAPITAL MARKET PROFESSIONALS
+            {t('heroSubtitle')}
           </h1>
         </div>
 
@@ -69,7 +68,7 @@ export default function Hero() {
             }`}
         >
           <p className="text-base md:text-lg text-[#e5e8ec]/95 font-light tracking-[0.12em]">
-            Delivering trusted financial software to leading institutions — refined through decades of industry expertise.
+            {t('heroDescription')}
           </p>
         </div>
       </div>

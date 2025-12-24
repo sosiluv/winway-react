@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 // ✨ Fade-in component
 function FadeIn({ children, delay = 0 }) {
@@ -37,7 +36,14 @@ function FadeIn({ children, delay = 0 }) {
 
 export default function OMSPage() {
     const { t } = useTranslation('common');
-    const navigate = useNavigate();
+
+    const [currentSection, setCurrentSection] = useState<'overview'|'details'>('overview');
+
+    const scrollToSection = (sectionId: string, tab?: typeof currentSection) => {
+        const el = document.getElementById(sectionId);
+        if (tab) setCurrentSection(tab);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+    };
 
     const leftFeatures = [
         {
@@ -75,9 +81,7 @@ export default function OMSPage() {
         },
     ];
 
-    useEffect(() => {
-        document.documentElement.style.scrollBehavior = 'smooth';
-    }, []);
+    // programmatic scrolling handled locally via scrollToSection
 
     return (
         <div className="min-h-screen bg-white pt-16">

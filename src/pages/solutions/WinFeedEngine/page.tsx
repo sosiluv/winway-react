@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 // ✨ Fade-in component
 function FadeIn({ children, delay = 0 }) {
@@ -37,11 +36,14 @@ function FadeIn({ children, delay = 0 }) {
 
 export default function WinFeedEnginePage() {
     const { t } = useTranslation('common');
-    const navigate = useNavigate();
 
-    useEffect(() => {
-        document.documentElement.style.scrollBehavior = 'smooth';
-    }, []);
+    const [currentSection, setCurrentSection] = useState<'overview' | 'applications' | 'functions' | 'key-features'>('overview');
+
+    const scrollToSection = (sectionId: string, tab?: typeof currentSection) => {
+        const el = document.getElementById(sectionId);
+        if (tab) setCurrentSection(tab);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+    };
 
     return (
         <div className="min-h-screen bg-white pt-16">
@@ -58,18 +60,18 @@ export default function WinFeedEnginePage() {
 
                     {/* Navigation */}
                     <div className="flex flex-wrap justify-center gap-6 pt-6">
-                        <a href="#overview" className="text-white hover:text-slate-300 text-sm font-medium border-b-2 border-transparent hover:border-white pb-1">
+                        <button onClick={() => scrollToSection('overview', 'overview')} className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'overview' ? 'text-white border-white' : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'}`}>
                             Overview
-                        </a>
-                        <a href="#functions" className="text-white hover:text-slate-300 text-sm font-medium border-b-2 border-transparent hover:border-white pb-1">
-                            Functions
-                        </a>
-                        <a href="#features" className="text-white hover:text-slate-300 text-sm font-medium border-b-2 border-transparent hover:border-white pb-1">
-                            Features
-                        </a>
-                        <a href="#applications" className="text-white hover:text-slate-300 text-sm font-medium border-b-2 border-transparent hover:border-white pb-1">
+                        </button>
+                        <button onClick={() => scrollToSection('applications', 'applications')} className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'applications' ? 'text-white border-white' : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'}`}>
                             Applications
-                        </a>
+                        </button>
+                        <button onClick={() => scrollToSection('functions', 'functions')} className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'functions' ? 'text-white border-white' : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'}`}>
+                            Functions
+                        </button>
+                        <button onClick={() => scrollToSection('key-features', 'key-features')} className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'key-features' ? 'text-white border-white' : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'}`}>
+                            Key Features
+                        </button>
                     </div>
                 </div>
             </section>

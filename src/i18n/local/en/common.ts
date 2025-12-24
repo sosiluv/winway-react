@@ -1,5 +1,5 @@
 
-export const common = {
+export default {
   // Navigation
   "TRADING SYSTEMS": "TRADING SYSTEMS",
   "PLATFORMS": "PLATFORMS", 
@@ -10,6 +10,7 @@ export const common = {
   // Hero Section
   heroTitle: "SOFTWARE SOLUTIONS BUILT FOR",
   heroSubtitle: "CAPITAL MARKET PROFESSIONALS",
+  heroDescription: "Delivering trusted financial software to leading institutions — refined through decades of industry expertise.",
   companyName: "Winway Systems, Inc.",
   
   // Common
@@ -18,7 +19,8 @@ export const common = {
   contactUs: "CONTACT US",
   
   // Footer
-  copyright: "© 2024 Winway Systems, Inc. All rights reserved.",
+  copyright: "© 2025 Winway Systems, Inc. All rights reserved.",
+  address: "106 Gukjegeumyung-ro Yeongdeungpo-gu, Seoul 07343, Korea",
   
   // Language
   language: "Language",

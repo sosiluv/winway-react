@@ -232,22 +232,22 @@ export default function WinEdgePropTradingPage() {
                                 Overview
                             </button>
                             <button
-                                onClick={() => scrollToSection('trading-functions', 'functions')}
+                                onClick={() => scrollToSection('core-arbitrage', 'functions')}
                                 className={`text-sm font-medium pb-1 border-b-2 cursor-pointer transition-colors whitespace-nowrap ${currentSection === 'functions'
                                     ? 'text-white border-white'
                                     : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'
                                     }`}
                             >
-                                Trading Functions
+                                Core Arbitrage Capabilities
                             </button>
                             <button
-                                onClick={() => scrollToSection('features', 'features')}
+                                onClick={() => scrollToSection('why-stealth-win', 'features')}
                                 className={`text-sm font-medium pb-1 border-b-2 cursor-pointer transition-colors whitespace-nowrap ${currentSection === 'features'
                                     ? 'text-white border-white'
                                     : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'
                                     }`}
                             >
-                                Features
+                                Why Stealth Win
                             </button>
                         </div>
                     </div>

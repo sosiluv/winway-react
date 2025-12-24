@@ -83,9 +83,9 @@ export default function Footer() {
             <ul className="space-y-2 text-[15px] leading-relaxed">
               <li><Link to="/winway" className="hover:text-white">About Us</Link></li>
               <li><Link to="/projects" className="hover:text-white">Projects</Link></li>
-              <li><Link to="/winway" className="hover:text-white">What We Do</Link></li>
-              <li><Link to="/winway" className="hover:text-white">Careers</Link></li>
-              <li><Link to="/winway" className="hover:text-white">Location</Link></li>
+              <li><Link to="/winway#what-we-do" className="hover:text-white">What We Do</Link></li>
+              <li><Link to="/winway#careers" className="hover:text-white">Careers</Link></li>
+              <li><Link to="/winway#location" className="hover:text-white">Location</Link></li>
             </ul>
           </div>
         </div>
@@ -93,10 +93,10 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-slate-800 mt-12 pt-8 text-sm flex flex-col md:flex-row justify-between items-center">
           <p className="text-slate-500">
-            © 2025 Winway Systems, Inc. All rights reserved.
+            {t('copyright')}
           </p>
           <p className="text-slate-600 mt-3 md:mt-0">
-            106 Gukjegeumyung-ro Yeongdeungpo-gu, Seoul 07343, Korea
+            {t('address')}
           </p>
         </div>
       </div>

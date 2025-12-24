@@ -7,6 +7,7 @@ export default function ServerPlatformPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedUI, setSelectedUI] = useState(0);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
+  const [currentSection, setCurrentSection] = useState<'key-features' | 'ui-control' | 'functions' | 'architectures'>('key-features');
 
   const features = [
     {
@@ -93,11 +94,10 @@ export default function ServerPlatformPage() {
     setCurrentSlide(index);
   };
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId: string, tab?: 'key-features' | 'ui-control' | 'functions' | 'architectures') => {
+    if (tab) setCurrentSection(tab);
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -117,27 +117,23 @@ export default function ServerPlatformPage() {
             {/* Navigation Categories - Minimal Design */}
               <div className="flex flex-wrap gap-6 border-t border-slate-600 pt-6 justify-center">
               <button
-                onClick={() => scrollToSection('key-features')}
-                className="text-white hover:text-slate-300 text-sm font-medium transition-colors cursor-pointer whitespace-nowrap border-b-2 border-transparent hover:border-white pb-1"
-              >
+                onClick={() => scrollToSection('key-features', 'key-features')}
+                className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'key-features' ? 'text-white border-white' : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'}`}>
                 Key Features
               </button>
               <button
-                onClick={() => scrollToSection('ui-control')}
-                className="text-white hover:text-slate-300 text-sm font-medium transition-colors cursor-pointer whitespace-nowrap border-b-2 border-transparent hover:border-white pb-1"
-              >
+                onClick={() => scrollToSection('ui-control', 'ui-control')}
+                className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'ui-control' ? 'text-white border-white' : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'}`}>
                 UI Control
               </button>
               <button
-                onClick={() => scrollToSection('functions')}
-                className="text-white hover:text-slate-300 text-sm font-medium transition-colors cursor-pointer whitespace-nowrap border-b-2 border-transparent hover:border-white pb-1"
-              >
+                onClick={() => scrollToSection('functions', 'functions')}
+                className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'functions' ? 'text-white border-white' : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'}`}>
                 Functions
               </button>
               <button
-                onClick={() => scrollToSection('architectures')}
-                className="text-white hover:text-slate-300 text-sm font-medium transition-colors cursor-pointer whitespace-nowrap border-b-2 border-transparent hover:border-white pb-1"
-              >
+                onClick={() => scrollToSection('architectures', 'architectures')}
+                className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'architectures' ? 'text-white border-white' : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'}`}>
                 Architectures
               </button>
             </div>

@@ -1,5 +1,5 @@
 
-import { RouteObject } from 'react-router-dom';
+import type { RouteObject } from 'react-router-dom';
 import HomePage from '../pages/home/page';
 import TradingSystemsPage from '../pages/trading-systems/page';
 import WinEdgePage from '../pages/trading-systems/win-edge/page';

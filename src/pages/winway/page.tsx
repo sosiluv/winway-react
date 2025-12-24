@@ -1,8 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function WinwayPage() {
   const { t } = useTranslation('common');
+  const location = useLocation();
   const [visibleYears, setVisibleYears] = useState<Set<string>>(new Set());
   const [isVisible, setIsVisible] = useState(false);
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -14,6 +16,17 @@ export default function WinwayPage() {
     }, 100);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
 
   const history = {
     2025: [
@@ -250,7 +263,7 @@ export default function WinwayPage() {
 
                       {/* Milestones */}
                       <ul className="space-y-1">
-                        {history[year as keyof typeof history].map((item, idx) => (
+                        {history[year as unknown as keyof typeof history].map((item, idx) => (
                           <li
                             key={idx}
                             className={`text-slate-1000 font-Inter text-base leading-[1.7] ${index % 2 === 0 ? 'text-right' : 'text-left'
@@ -272,7 +285,7 @@ export default function WinwayPage() {
       </section>
 
       {/* What We Do Section */}
-      <section className="py-20 bg-slate-900">
+      <section id="what-we-do" className="py-20 bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-20 font-cormorant">
             What We Do
@@ -295,7 +308,7 @@ export default function WinwayPage() {
       </section>
 
       {/* Who We Look For Section */}
-      <section className="py-20 bg-white">
+      <section id="careers" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-12 font-cormorant">
             Who We Look For
@@ -407,7 +420,7 @@ export default function WinwayPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-stone-100">
+      <section id="location" className="py-20 bg-stone-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-12 font-cormorant">
             Contact & Address

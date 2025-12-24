@@ -6,6 +6,7 @@ export default function PCClientPlatformPage() {
   const { t } = useTranslation('common');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentSummarySlide, setCurrentSummarySlide] = useState(0);
+  const [currentSection, setCurrentSection] = useState<'summary' | 'key-features' | 'functions' | 'architectures'>('summary');
 
   const summaryFeatures = [
     {
@@ -141,11 +142,10 @@ export default function PCClientPlatformPage() {
     setCurrentSummarySlide(index);
   };
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId: string, tab?: 'summary' | 'key-features' | 'functions' | 'architectures') => {
+    if (tab) setCurrentSection(tab);
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -166,26 +166,26 @@ export default function PCClientPlatformPage() {
               {/* Navigation Categories */}
               <div className="flex flex-wrap gap-6 border-t border-slate-600 pt-6 justify-center">
                 <button
-                  onClick={() => scrollToSection('summary')}
-                  className="text-white hover:text-slate-300 text-sm font-medium transition-colors cursor-pointer whitespace-nowrap border-b-2 border-transparent hover:border-white pb-1"
+                  onClick={() => scrollToSection('summary', 'summary')}
+                  className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'summary' ? 'text-white border-white' : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'}`}
                 >
                   Summary
                 </button>
                 <button
-                  onClick={() => scrollToSection('key-features')}
-                  className="text-white hover:text-slate-300 text-sm font-medium transition-colors cursor-pointer whitespace-nowrap border-b-2 border-transparent hover:border-white pb-1"
+                  onClick={() => scrollToSection('key-features', 'key-features')}
+                  className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'key-features' ? 'text-white border-white' : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'}`}
                 >
                   Key Features
                 </button>
                 <button
-                  onClick={() => scrollToSection('functions')}
-                  className="text-white hover:text-slate-300 text-sm font-medium transition-colors cursor-pointer whitespace-nowrap border-b-2 border-transparent hover:border-white pb-1"
+                  onClick={() => scrollToSection('functions', 'functions')}
+                  className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'functions' ? 'text-white border-white' : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'}`}
                 >
                   Functions
                 </button>
                 <button
-                  onClick={() => scrollToSection('architectures')}
-                  className="text-white hover:text-slate-300 text-sm font-medium transition-colors cursor-pointer whitespace-nowrap border-b-2 border-transparent hover:border-white pb-1"
+                  onClick={() => scrollToSection('architectures', 'architectures')}
+                  className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'architectures' ? 'text-white border-white' : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'}`}
                 >
                   Architectures
                 </button>

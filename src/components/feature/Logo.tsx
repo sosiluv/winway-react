@@ -1,18 +1,16 @@
 
 import { Link } from 'react-router-dom';
+import LogoImage from '../../images/logos/winwaylogo.png'
 
 export default function Logo() {
   return (
-    <Link to="/" className="flex items-center gap-3">
-      {/* Company name */}
-      <div className="flex flex-col text-left leading-none">
-
-        <span
-          className="text-white text-2xl md:text-[26px] leading-tight"
-          style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}
-        >
-          WINWAY, Inc.
-        </span>
+    <Link to="/" className="flex items-center gap-3 justify-start">
+      <div className="flex items-center text-left leading-none">
+        <img
+          src={LogoImage}
+          alt="logo"
+          className="h-8 md:h-10 lg:h-12 md:w-36 lg:w-44 object-contain ml-0"
+        />
       </div>
     </Link>
   );

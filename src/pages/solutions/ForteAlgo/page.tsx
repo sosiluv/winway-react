@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 // ✨ Fade-in animation wrapper
 function FadeIn({ children, delay = 0 }) {
@@ -37,8 +36,15 @@ function FadeIn({ children, delay = 0 }) {
 
 export default function ForteAlgoPage() {
   const { t } = useTranslation('common');
-  const navigate = useNavigate();
   const [expanded, setExpanded] = useState<number | null>(null);
+
+  const [currentSection, setCurrentSection] = useState<'overview' | 'key-features'>('overview');
+
+  const scrollToSection = (sectionId: string, tab?: typeof currentSection) => {
+    const el = document.getElementById(sectionId);
+    if (tab) setCurrentSection(tab);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const toggleExpand = (index: number) => {
     setExpanded(expanded === index ? null : index);
@@ -107,9 +113,7 @@ export default function ForteAlgoPage() {
     },
   ];
 
-  useEffect(() => {
-    document.documentElement.style.scrollBehavior = 'smooth';
-  }, []);
+  // local programmatic scrolling handled by scrollToSection
 
   return (
     <div className="min-h-screen bg-white pt-16">
@@ -125,18 +129,18 @@ export default function ForteAlgoPage() {
 
           {/* Navigation */}
           <div className="flex flex-wrap justify-center gap-6 border-t border-slate-600 pt-6">
-            <a
-              href="#overview"
-              className="text-white hover:text-slate-300 text-sm font-medium transition-colors border-b-2 border-transparent hover:border-white pb-1"
+            <button
+              onClick={() => scrollToSection('overview', 'overview')}
+              className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'overview' ? 'text-white border-white' : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'}`}
             >
               Overview
-            </a>
-            <a
-              href="#key-features"
-              className="text-white hover:text-slate-300 text-sm font-medium transition-colors border-b-2 border-transparent hover:border-white pb-1"
+            </button>
+            <button
+              onClick={() => scrollToSection('key-features', 'key-features')}
+              className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'key-features' ? 'text-white border-white' : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'}`}
             >
               Key Features
-            </a>
+            </button>
           </div>
         </div>
       </section>

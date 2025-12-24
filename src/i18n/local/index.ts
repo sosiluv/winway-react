@@ -1,6 +1,6 @@
 const modules = import.meta.glob('./*/*.ts', { eager: true });
 
-const messages: Record<string, { translation: Record<string, string> }> = {};
+const messages: Record<string, { common: Record<string, string> }> = {};
 
 Object.keys(modules).forEach((path) => {
   const match = path.match(/\.\/([^/]+)\/([^/]+)\.ts$/);
@@ -9,13 +9,13 @@ Object.keys(modules).forEach((path) => {
     const module = modules[path] as { default?: Record<string, string> };
     
     if (!messages[lang]) {
-      messages[lang] = { translation: {} };
+      messages[lang] = { common: {} };
     }
     
     // 合并翻译内容
     if (module.default) {
-      messages[lang].translation = {
-        ...messages[lang].translation,
+      messages[lang].common = {
+        ...messages[lang].common,
         ...module.default
       };
     }

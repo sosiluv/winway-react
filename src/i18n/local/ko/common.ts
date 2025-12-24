@@ -1,5 +1,5 @@
 
-export const common = {
+export default {
   // Navigation
   "TRADING SYSTEMS": "트레이딩 시스템",
   "PLATFORMS": "플랫폼", 
@@ -10,6 +10,7 @@ export const common = {
   // Hero Section
   heroTitle: "자본시장 전문가를 위한",
   heroSubtitle: "소프트웨어 솔루션",
+  heroDescription: "신뢰할 수 있는 금융 소프트웨어를 주요 기관에 제공하여 수십 년의 산업 경험을 바탕으로 한 정교한 기술을 제공합니다.",
   companyName: "윈웨이 시스템즈",
   
   // Common
@@ -18,8 +19,8 @@ export const common = {
   contactUs: "문의하기",
   
   // Footer
-  copyright: "© 2024 윈웨이 시스템즈. 모든 권리 보유.",
-  
+  copyright: "© 2025 윈웨이 시스템즈. 모든 권리 보유.",
+  address: "서울특별시 영등포구 국제금융로 106, 411호(여의도동, 행진빌딩)",
   // Language
   language: "언어",
   english: "English",

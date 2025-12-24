@@ -21,10 +21,12 @@ export default function Header() {
 
   return (
     <nav className="bg-slate-900 border-b border-slate-800 fixed top-0 left-0 right-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="hidden md:flex absolute left-0 top-0 h-16 items-center pl-4 sm:pl-6 lg:pl-8">
+        <Logo />
+      </div>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 md:pl-36 lg:pl-44">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 md:hidden">
             <Logo />
           </div>
 
@@ -60,7 +62,7 @@ export default function Header() {
 
           {/* Language Toggle & Mobile menu button */}
           <div className="flex items-center space-x-4">
-            <LanguageToggle />
+            {/* <LanguageToggle /> */}
 
             <div className="md:hidden">
               <button

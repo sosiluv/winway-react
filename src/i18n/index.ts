@@ -9,6 +9,8 @@ i18n
   .init({
     lng: 'en',
     fallbackLng: 'en',
+    defaultNS: 'common',
+    ns: 'common',
     debug: false,
     resources: messages,
     interpolation: {

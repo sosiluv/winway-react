@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 /* Fade-in component (unchanged) */
 function FadeIn({ children, delay = 0 }) {
@@ -36,23 +35,20 @@ function FadeIn({ children, delay = 0 }) {
 /* FULL PAGE: CHAMMAE MARKET SURVEILLANCE SYSTEM */
 export default function ChammaePage() {
     const { t } = useTranslation('common');
-    const navigate = useNavigate();
     const [openFeatureIndex, setOpenFeatureIndex] = useState(null);
 
+    const [currentSection, setCurrentSection] = useState<'overview' | 'key-features' | 'scenarios' | 'benefits'>('overview');
 
     /* Smooth scroll function */
-    const scrollToSection = (id) => {
+    const scrollToSection = (id: string, tab?: typeof currentSection) => {
         const el = document.getElementById(id);
+        if (tab) setCurrentSection(tab);
         if (el) {
             const yOffset = -80;
             const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
             window.scrollTo({ top: y, behavior: 'smooth' });
         }
     };
-
-    useEffect(() => {
-        document.documentElement.style.scrollBehavior = 'smooth';
-    }, []);
 
     return (
         <div className="min-h-screen bg-white pt-16">
@@ -76,32 +72,28 @@ export default function ChammaePage() {
                         {/* Navigation */}
                         <div className="flex flex-wrap gap-6 border-t border-slate-600 pt-6 justify-center">
                             <button
-                                onClick={() => scrollToSection('overview')}
-                                className="text-white hover:text-slate-300 text-sm font-medium transition-colors border-b-2 border-transparent hover:border-white pb-1"
-                            >
-                                Overview
-                            </button>
+                                    onClick={() => scrollToSection('overview', 'overview')}
+                                    className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'overview' ? 'text-white border-white' : 'text-white/90 border-transparent hover:text-white hover:border-slate-300'}`}>
+                                    Overview
+                                </button>
 
-                            <button
-                                onClick={() => scrollToSection('key-features')}
-                                className="text-white hover:text-slate-300 text-sm font-medium transition-colors border-b-2 border-transparent hover:border-white pb-1"
-                            >
-                                Key Features
-                            </button>
+                                <button
+                                    onClick={() => scrollToSection('key-features', 'key-features')}
+                                    className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'key-features' ? 'text-white border-white' : 'text-white/90 border-transparent hover:text-white hover:border-slate-300'}`}>
+                                    Key Features
+                                </button>
 
-                            <button
-                                onClick={() => scrollToSection('scenarios')}
-                                className="text-white hover:text-slate-300 text-sm font-medium transition-colors border-b-2 border-transparent hover:border-white pb-1"
-                            >
-                                Scenarios
-                            </button>
+                                <button
+                                    onClick={() => scrollToSection('scenarios', 'scenarios')}
+                                    className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'scenarios' ? 'text-white border-white' : 'text-white/90 border-transparent hover:text-white hover:border-slate-300'}`}>
+                                    Scenarios
+                                </button>
 
-                            <button
-                                onClick={() => scrollToSection('benefits')}
-                                className="text-white hover:text-slate-300 text-sm font-medium transition-colors border-b-2 border-transparent hover:border-white pb-1"
-                            >
-                                Benefits
-                            </button>
+                                <button
+                                    onClick={() => scrollToSection('benefits', 'benefits')}
+                                    className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'benefits' ? 'text-white border-white' : 'text-white/90 border-transparent hover:text-white hover:border-slate-300'}`}>
+                                    Benefits
+                                </button>
                         </div>
                     </div>
                 </div>

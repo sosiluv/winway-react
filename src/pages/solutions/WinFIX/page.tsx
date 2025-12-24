@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 // ✨ Fade-in component
 function FadeIn({ children, delay = 0 }) {
@@ -37,7 +36,14 @@ function FadeIn({ children, delay = 0 }) {
 
 export default function OMSPage() {
     const { t } = useTranslation('common');
-    const navigate = useNavigate();
+
+    const [currentSection, setCurrentSection] = useState<'overview' | 'applications' | 'functions' | 'key-features'>('overview');
+
+    const scrollToSection = (sectionId: string, tab?: typeof currentSection) => {
+        const el = document.getElementById(sectionId);
+        if (tab) setCurrentSection(tab);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+    };
 
     const leftFeatures = [
         {
@@ -75,9 +81,7 @@ export default function OMSPage() {
         },
     ];
 
-    useEffect(() => {
-        document.documentElement.style.scrollBehavior = 'smooth';
-    }, []);
+    // programmatic scrolling handled by scrollToSection
 
     return (
         <div className="min-h-screen bg-white pt-16">
@@ -93,30 +97,18 @@ export default function OMSPage() {
 
                     {/* Navigation */}
                     <div className="flex flex-wrap justify-center gap-6 border-t border-slate-600 pt-6">
-                        <a
-                            href="#overview"
-                            className="text-white hover:text-slate-300 text-sm font-medium transition-colors border-b-2 border-transparent hover:border-white pb-1"
-                        >
+                        <button onClick={() => scrollToSection('overview', 'overview')} className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'overview' ? 'text-white border-white' : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'}`}>
                             Overview
-                        </a>
-                        <a
-                            href="#applications"
-                            className="text-white hover:text-slate-300 text-sm font-medium transition-colors border-b-2 border-transparent hover:border-white pb-1"
-                        >
+                        </button>
+                        <button onClick={() => scrollToSection('applications', 'applications')} className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'applications' ? 'text-white border-white' : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'}`}>
                             Applications
-                        </a>
-                        <a
-                            href="#functions"
-                            className="text-white hover:text-slate-300 text-sm font-medium transition-colors border-b-2 border-transparent hover:border-white pb-1"
-                        >
-                            Funtions
-                        </a>
-                        <a
-                            href="#key-features"
-                            className="text-white hover:text-slate-300 text-sm font-medium transition-colors border-b-2 border-transparent hover:border-white pb-1"
-                        >
+                        </button>
+                        <button onClick={() => scrollToSection('functions', 'functions')} className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'functions' ? 'text-white border-white' : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'}`}>
+                            Functions
+                        </button>
+                        <button onClick={() => scrollToSection('key-features', 'key-features')} className={`text-sm font-medium pb-1 border-b-2 transition-colors whitespace-nowrap ${currentSection === 'key-features' ? 'text-white border-white' : 'text-slate-300 border-transparent hover:text-white hover:border-slate-300'}`}>
                             Key Features
-                        </a>
+                        </button>
                     </div>
                 </div>
             </section>
