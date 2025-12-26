@@ -20,6 +20,7 @@ export default function ProjectsPage() {
       { company: "Yuanta Securities", description: "FX Arbitrage Auto-Trading Solution", status: "In Progress" },
       { company: "Yuanta Securities", description: "FX LP Connectivity & FIX HUB Service", status: "In Progress" },
       { company: "Woori Investment & Securities", description: "New Platform Development", status: "In Progress" },
+      { company: "NH Futures", description: "LME Futures Trading System Development", status: "In Progress" },
       { company: "Kookmin Bank", description: "E-CM FX Trading Expansion & Government Bond Trading Platform", status: "In Progress" },
       { company: "Shinhan Bank", description: "FX Platform Implementation & e-FX Infrastructure Expansion", status: "In Progress" },
       { company: "Shinhan Securities", description: "TR System Upgrade Consulting", status: "In Progress" },
